@@ -29,22 +29,20 @@
     `$ docker run -it ubuntu:latest echo 'hello, world!`
 
 
-    내 호스트 환경에서 실행하는 `$ echo 'hello, world!` 와는 어떤 차이가 있을까요?  
     해당 명령어를 실행하면 호스트 환경이 아닌 ubuntu 환경의 컨테이너에서 hello, world가 출력 됩니다.  
-    물론 지금 명령어를 실행한 터미널은 본인의 호스트 환경이지만 직접 Ubuntu(CentOS...) Shell을 이용할 수도 있습니다.  
+    또한 지금 명령어를 실행한 터미널은 본인의 호스트 환경이지만 직접 ubuntu(CentOS...) Shell을 이용할 수도 있습니다.  
 
 
-2. Ubuntu Shell에서 hello, world 출력하기
+2. ubuntu Shell에서 hello, world 출력하기
 
 
     1. `$ docker run -it ubuntu:latest bash`
         bash는 기본 커맨드이므로 생략 가능합니다.  
     2. `$ echo hello, world`  
-    이전의 `hello world`는 호스트 환경에서 실행한 Ubuntu 명령어 였지만  
-    지금은 직접 Ubuntu shell로 들어와
-    `hello world`를 출력했습니다.
+    이전의 `hello world`는 호스트 환경에서 실행한 ubuntu 명령어 였지만  
+    지금은 직접 ubuntu shell로 들어와 `hello world`를 출력했습니다.
     3. `$ ls`  
-    Ubuntu 컨테이너 이기 때문에 맥이나 윈도우에 없는 Ubuntu File System을 확인할 수 있습니다.  
+    ubuntu 컨테이너 이기 때문에 맥이나 윈도우가 아닌 ubuntu 파일 시스템을 확인할 수 있습니다.  
 
 ## 4. Docker에 대한 이해 
 1. Docker는 VM(Vitual Machine) 일까?
@@ -54,10 +52,17 @@
     VirtualBox나 VirtualMachine은 하드웨어 가상화가 이루어집니다.  
     하드웨어 가상화란 운영체제 위에 소프트웨어로 구성된 하드웨어가 하나 더 있다고 생각하면 이해하기 쉽습니다.  
 
+
 2. 컨테이너
 
 
-    > 도커에서 사용하는 컨테이너는 하나의 프로세스 이며, 하드웨어 가상화가 아닌 격리된 환경에서 실행되는 프로세스 입니다.
+    > 도커에서 사용하는 컨테이너는 하나의 프로세스 이며, 하드웨어 가상화가 아닌 격리된 환경에서 실행되는 프로세스 입니다.  
+
+    > Docker는 Linux Container 기술이기 때문에 MacOS 또는 Windows에서 사용 할 경우
+    각각의 가상화 환경(xhyve hyper-V)에서 돌아갑니다.  
+
+    > Windows Container도 존재하지만 해당 세미나에서는 Linux Container만 다룹니다.  
+
 
 3. 이미지
 
@@ -101,39 +106,38 @@ ps 명령어를 통해 실행중인 컨테이너를 확인 할 수 있습니다.
 > **-a 옵션을 통해 정지된 컨테이너도 확인 가능**
 
 2. 컨테이너 정지
-`docker stop <containier_id>`
+`$ docker stop <containier_id>`
 
 3. 컨테이너 삭제
 `$ docker rm <container_id>`
 rm 명령어를 통해 종료된 컨테이너를 삭제할 수 있습니다.
 
 4. 컨테이너 로그
-`Docker logs <container_id>`
+`$ docker logs <container_id>`
 logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습니다.
-> **-f 실시간으로 생성된 로그를 확인 가능**
+> **-f 옵션을 통해 실시간으로 생성된 로그를 확인 가능**
 
 5. 이미지 목록
-`docker images`
+`$ docker images`
 호스트에 설치되어 있는 이미지를 확인할 수 있습니다.
 
 6. 이미지 삭제
-`docker rmi <image_name>`
+`$ docker rmi <image_name>`
 
 7. 이미지 다운로드
-`docker pull <image_name>:<tag>`
+`$ docker pull <image_name>:<tag>`
 > **run 명령어를 실행하면 이미지가 없는 경우 자동으로 pull 합니다.**
 
 ## 6. 이미지 생성
-> 지금까지 사용해 본 이미지는 DockerHub에 올라와 있는 이미지 입니다.
-> 지금 실습부터는 직접 이미지를 만들어 보겠습니다.
-> 기본 우분투 이미지에 git을 추가
+> 지금까지 사용해 본 이미지는 DockerHub에 올라와 있는 이미지 입니다.  
+> 지금 실습부터는 직접 이미지를 만들어 보겠습니다. (우분투 기본 이미지에 git을 추가)
 
 (컨테이너를 이미지로 저장하기)
 (컨테이너의 이미지 이해)
 (도커의 파일 시스템은 단순한 큰 덩어리가 아닌 이미지 레이어로 구성되어 있음)
 (도커 풀 또는 런 했을 때 이미지가 한 덩어리가 아닌 여러개를 받아오는 걸 볼 수 있음)
 
-1. Ubuntu Container 실행
+1. ubuntu Container 실행
 `$ docker run -it ubuntu:latest bash`
 
 2. apt-get Update
