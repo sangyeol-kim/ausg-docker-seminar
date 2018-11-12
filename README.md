@@ -32,13 +32,13 @@
 
 2. Ubuntu Shell에서 hello, world 출력하기  
     1. `$ docker run -it ubuntu:latest bash`  
-        >> **bash는 기본 커맨드이므로 생략 가능합니다.**  
+        **bash는 기본 커맨드이므로 생략 가능합니다.**  
     2. `$ echo hello, world`  
-    이전의 `hello world`는 호스트 환경에서 실행한 Ubuntu 명령어 였지만  
+    **이전의 `hello world`는 호스트 환경에서 실행한 Ubuntu 명령어 였지만  
     지금은 직접 Ubuntu shell로 들어와
-    `hello world`를 출력했습니다.  
+    `hello world`를 출력했습니다.**  
     3. `$ ls`  
-    ubuntu 컨테이너 이기 때문에 맥이나 윈도우에 없는 Ubuntu File System을 확인할 수 있습니다.  
+    **ubuntu 컨테이너 이기 때문에 맥이나 윈도우에 없는 Ubuntu File System을 확인할 수 있습니다.**  
 
 ## 4. Demo 01 이후 생기는 흔한 궁금증  
 1. Docker는 VM(Vitual Machine) 인가요?  
