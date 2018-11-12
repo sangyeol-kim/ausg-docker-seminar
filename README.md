@@ -131,10 +131,10 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 > **기본 ubuntu 이미지로 실행한 컨테이너에 git이 설치 된 상태**
 
 4. Commit Cammand를 이용한 이미지 생성  
-`docker commit <container_id> <image>:<tag>`
+`docker commit <container_id> <image_name>:<tag>`
 
 5. 이미지 확인  
-`docekr images | grep git`
+`docekr images | grep <image_name>`
 
 6. 생성한 이미지를 이용해 켄테이너 실행  
 `docker run -it ubuntu:git bash`
@@ -206,10 +206,10 @@ ex) ubuntu:16.04
 1. https://github.com/sangyeol-kim/docker_node_test 에 접속해 해당 프로젝트를 clone 해옵니다.
 > 해당 프로젝트는 Node.js로 작성된 hello, world!를 출력하는 간단한 웹 애플리케이션입니다.
 
-2. 해당 폴더로 접근해 `$ docker buld -t <username>/<app_name>:<tag>` 를 입력합니다.
+2. 해당 폴더로 접근해 `$ docker buld -t <image_name>:<tag>` 를 입력합니다.
 > -t는 이미지에 이름을 부여하는 옵션이며, tag는 latest 또는 01과 같이 자유롭게 입력하시면 됩니다.  
 
-3. `$ docker run -p 5555:4567 -d <username>/<app_name>:<tag>`
+3. `$ docker run -p 5555:4567 -d <image_name>:<tag>`
 > -d 옵션을 주면 백그라운드에서 컨테이너가 실행됩니다.  
 > -p 옵션을 통해 컨테이너 내부의 4567 port와 호스트의 5555 포트를 연결합니다.
 
@@ -218,7 +218,7 @@ ex) ubuntu:16.04
 > Hello, world!가 정상적으로 출력된다면 실습을 성공적으로 마치셨습니다 :)
 
 5. 컨테이너 내부에 접근하는 방법
-> `$ docker exec -it <container id> /bin/bash`
+> `$ docker exec -it <container_id> bash`
 
 
 ## 9. Jenkins
