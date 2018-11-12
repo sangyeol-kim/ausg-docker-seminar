@@ -23,15 +23,21 @@
 
 ## 3. Docker Demo 01
 
-1. hello, world 출력하기  
-    `$ docker run -it ubuntu:latest echo 'hello, world!`    
+1. hello, world 출력하기
+
+
+    `$ docker run -it ubuntu:latest echo 'hello, world!`
+
+
     내 호스트 환경에서 실행하는 `$ echo 'hello, world!` 와는 어떤 차이가 있을까요?  
     해당 명령어를 실행하면 호스트 환경이 아닌 ubuntu 환경의 컨테이너에서 hello, world가 출력 됩니다.  
     물론 지금 명령어를 실행한 터미널은 본인의 호스트 환경이지만 직접 Ubuntu(CentOS...) Shell을 이용할 수도 있습니다.  
 
 
-2. Ubuntu Shell에서 hello, world 출력하기  
-    1. `$ docker run -it ubuntu:latest bash`  
+2. Ubuntu Shell에서 hello, world 출력하기
+
+
+    1. `$ docker run -it ubuntu:latest bash`
         bash는 기본 커맨드이므로 생략 가능합니다.  
     2. `$ echo hello, world`  
     이전의 `hello world`는 호스트 환경에서 실행한 Ubuntu 명령어 였지만  
