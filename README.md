@@ -144,7 +144,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 
 
 > Dockerfile이란 이미지 생성 과정을 기술한 일종의 Docker 전용 DSL(Domain Specific Language)  
-> DSL이란 특정 도메인(Docker)에 특성화 된 Little Language  
+> DSL이란 특정 도메인(여기선 Docker)에 특성화 된 Little Language  
 > ex) Markdown Language
 
 > Dockerfile을 통해 이전에 생성한 이미지를 똑같이 만들어보겠습니다.
@@ -190,11 +190,11 @@ ex) ubuntu:16.04
 **`$ apt-get install git` 과 같이 중간에 응답해야 하는 부분이 있다면 꼭 -y 옵션을 추가해야 합니다.**
 
 4. WORKDIR
-> WORKDIR은 디렉토리 환경 / ENV 환경변수 기본 값 지정 등의 여러 명령어가 있지만 해당 세미나에서는 깊게 다루지 않습니다.
+> WORKDIR은 디렉토리 환경 / ENV 환경변수 기본 값 지정 등의 여러 명령어가 있지만 해당 세미나에서는 자세히 다루지 않습니다.
 
 5. CMD
 > CMD 명령어는 도커를 실행했을 때 기본적으로 실행될 명령어를 지정합니다.
-> 예를 들어 이전에 실행했던 `$docker run -it ubuntu:latest bash` 에서는 bash는 기본 명령어로 지정되어 있기 때문에 생략해도 실행이 됩니다.
+> 예를 들어 이전에 실행했던 `$docker run -it ubuntu:latest bash` 에서 bash는 기본 명령어로 지정되어 있기 때문에 생략해도 실행이 됩니다.
 
 ## 8. Dockerfile로 웹 애플리케이션 이미지 만들기
 > 해당 실습에서는 Github가 이용됩니다.
