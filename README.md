@@ -11,11 +11,11 @@
 
 1. 홈페이지 화면에서 "New repository"를 클릭합니다.
 
-![github](./assets/github_0.png)
+![github](./assets/images/github_0.png)
 
 2. 이름과 내용을 작성하고 생성해주세요.
 
-![github](./assets/github_1.png)
+![github](./assets/images/github_1.png)
 
 
 ## 2. [Docker](https://www.docker.com/)
