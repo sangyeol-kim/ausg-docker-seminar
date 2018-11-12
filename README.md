@@ -32,7 +32,7 @@
 
 2. Ubuntu Shell에서 hello, world 출력하기  
     1. `$ docker run -it ubuntu:latest bash`  
-    > **bash는 기본 커맨드이므로 생략 가능합니다.**  
+        > **bash는 기본 커맨드이므로 생략 가능합니다.**  
     2. `$ echo hello, world`  
     이전의 `hello world`는 호스트 환경에서 실행한 Ubuntu 명령어 였지만  
     지금은 직접 Ubuntu shell로 들어와
