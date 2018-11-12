@@ -245,12 +245,12 @@ ex) ubuntu:16.04
 > 5. 도커 이미지 저장 (DockerHub에 Push)
 > 6. 애플리케이션 업데이트 (각 서버마다 떠있는 컨테이너에 새로운 이미지를 업데이트)
 
-**지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.**
 
 ## 10. Jenkins Demo 01
 > 해당 실습에서는 DockerHub 계정이 필요합니다.
+>
+> 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
 
-1. 
 **MacOS**
 ```
 docker run -u root --rm -p 8080:8080 --name jenkins \ -v $(디렉토리):/var/jenkins_home \
@@ -262,7 +262,7 @@ docker run -u root --rm -p 8080:8080 --name jenkins \ -v $(디렉토리):/var/je
 ```
 
 > $(디렉토리)에는 
-**MacOS: /Users/${USER}/Download/jenkins**  
+**MacOS: /Users/${USER}/Download/jenkins**
 **Windows: //c/jenkins 와 같이 입력해주세요.**  
 
 > 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.  
