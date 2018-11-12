@@ -223,8 +223,7 @@ ex) ubuntu:16.04
 > `$ docker exec -it <container id> /bin/bash`
 
 
-## 9. Jenkins를 이용한 자동화
-> 해당 실습에서는 DockerHub 계정이 필요합니다.
+## 9. Jenkins
 
 > Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.  
 > TravisCI, CircleCI 등 여러 CI툴이 존재하지만 해당 실습에서는 대중적으로 많이 선택받고 있는 Jenkins를 사용합니다.  
@@ -232,7 +231,7 @@ ex) ubuntu:16.04
 (Slack 알림 플러그인도 존재!)  
 > 해당 실습에서는 Master만을 이용하여 진행합니다.  
 
-> CI/CD 란?  
+> **CI/CD** 란?  
 > CI(Continuous Integration) : 지속적 통합  
 > CD(Continuous Delivery) : 지속적 배포  
 > 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
@@ -246,19 +245,26 @@ ex) ubuntu:16.04
 > 5. 도커 이미지 저장 (DockerHub에 Push)
 > 6. 애플리케이션 업데이트 (각 서버마다 떠있는 컨테이너에 새로운 이미지를 업데이트)
 
-> 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
+**지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.**
+
+## 10. Jenkins Demo 01
+> 해당 실습에서는 DockerHub 계정이 필요합니다.
 
 1. 
 **MacOS**
+```
 docker run -u root --rm -p 8080:8080 --name jenkins \ -v $(디렉토리):/var/jenkins_home \
 -v /var/run/docker.sock:/var/run/docker.sock \ twysgs/jenkins:latest
+```
 **Windows**
+```
 docker run -u root --rm -p 8080:8080 --name jenkins \ -v $(디렉토리):/var/jenkins_home \ twysgs/jenkins:latest
+```
 
 > $(디렉토리)에는 
-**MacOS /Users/${USER}/Download/jenkins**
-**Windows //c/jenkins 와 같이 입력해주세요.**
+**MacOS: /Users/${USER}/Download/jenkins**  
+**Windows: //c/jenkins 와 같이 입력해주세요.**  
 
-> 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.
-
-> Jenkins는 기본적으로 8080 포트를 이용하며, 그 외의 포트를 이용하기 위해서는 별도의 수정이 필요합니다.
+> 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.  
+> Jenkins는 기본적으로 8080 포트를 이용하며, 그 외의 포트를 이용하기 위해서는 별도의 수정이 필요합니다.  
+  
