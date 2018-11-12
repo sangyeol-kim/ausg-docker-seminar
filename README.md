@@ -232,13 +232,12 @@ ex) ubuntu:16.04
 (Slack 알림 플러그인도 존재!)  
 > 해당 실습에서는 Master만을 이용하여 진행합니다.  
 
-> CI/CD 란?
-> CI(Continuous Integration) : 지속적 통합
-> CD(Continuous Delivery) : 지속적 배포
->
-> 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다.
-
-> Jenkins를 사용하면 다음 과정을 자동화 할 수 있습니다.
+> CI/CD 란?  
+> CI(Continuous Integration) : 지속적 통합  
+> CD(Continuous Delivery) : 지속적 배포  
+> 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
+> 
+> Jenkins를 사용하면 다음 과정을 자동화 할 수 있습니다.  
 >
 > 1. 소스 저장소에 최신 소스를 Push (여기까진 개발자의 몫)
 > 2. 전체 소스를 다운로드
