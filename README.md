@@ -241,14 +241,14 @@ ex) ubuntu:16.04
 **MacOS**
 ```
 docker run \
-  -u root \
-  --rm \
-  -d \
-  -p 8080:8080 \
-  --name jenkins \
-  -v $(디렉토리):/var/jenkins_home \
-  -v /var/run/docker.sock:/var/run/docker.sock \
-  twysgs/jenkins:latest
+-u root \
+--rm \
+-d \
+-p 8080:8080 \
+--name jenkins \
+-v $(디렉토리):/var/jenkins_home \
+-v /var/run/docker.sock:/var/run/docker.sock \
+twysgs/jenkins:latest
 ```
 
 **Windows**
