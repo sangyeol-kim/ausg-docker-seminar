@@ -76,7 +76,7 @@ ps 명령어를 통해 실행중인 컨테이너를 확인 할 수 있습니다.
 > **-a 옵션을 통해 정지된 컨테이너도 확인 가능**
 
 2. 컨테이너 정지  
-`$ docker stop <containier_id>`
+`$ docker stop <container_id>`
 
 3. 컨테이너 삭제  
 `$ docker rm <container_id>`
