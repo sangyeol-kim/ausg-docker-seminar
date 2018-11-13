@@ -3,7 +3,7 @@
 ## 사전 준비
 
 
-- AWS 및 Dockerhub 계정 그리고 호스트 환경에 맞는 Docker 설치가 필요합니다.
+- [AWS](https://aws.amazon.com) 및 [DockerHub](https://hub.docker.com/) 계정 그리고 호스트 환경에 맞는 Docker 설치가 필요합니다.
 - http://meetu.ps/e/G2jdh/CRhtw/f 밋업 공지를 확인해주세요.
 
 ## 1. [Docker](https://www.docker.com/)
@@ -143,7 +143,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 `$ touch Dockerfile`
 
 2. Dockerfile 작성
-> 에디터 또는 vim 등을 이용하여 생성한 Dockerfile 아래 코드를 작성해주세요
+> 에디터 또는 vim 등을 이용하여 생성한 Dockerfile에 아래 코드를 작성해주세요.
 ``` 
     FROM ubuntu:latest
     RUN apt-get update
@@ -187,7 +187,7 @@ ex) ubuntu:16.04
 > 예를 들어 이전에 실행했던 `$docker run -it ubuntu:latest bash` 에서 bash는 기본 명령어로 지정되어 있기 때문에 생략해도 실행이 됩니다.
 
 ## 8. Dockerfile로 웹 애플리케이션 이미지 만들기
-> 해당 실습에서는 Github가 이용됩니다.
+> 해당 실습에서는 Github가 이용됩니다.  
 > 해당 실습은 Node.js 공식문서를 이용합니다.
 > https://nodejs.org/ko/docs/guides/nodejs-docker-webapp/
 
@@ -197,11 +197,11 @@ ex) ubuntu:16.04
 > 해당 프로젝트는 Node.js로 작성된 hello, world!를 출력하는 간단한 웹 애플리케이션입니다.
 
 2. 해당 폴더로 접근해 `$ docker buld -t <image_name>:<tag>` 를 입력합니다.
-> -t는 이미지에 이름을 부여하는 옵션이며, tag는 latest 또는 01과 같이 자유롭게 입력하시면 됩니다.  
+> -t는 이미지에 이름을 부여하는 옵션이며, tag는 <image_name>:01과 같이 자유롭게 입력하시면 됩니다.  
 
 3. `$ docker run -p 5555:4567 -d <image_name>:<tag>`
 > -d 옵션을 주면 백그라운드에서 컨테이너가 실행됩니다.  
-> -p 옵션을 통해 컨테이너 내부의 4567 port와 호스트의 5555 포트를 연결합니다.
+> -p 옵션을 통해 컨테이너 내부의 4567 port와 호스트의 5555 port를 연결합니다.
 
 4. `$ docker logs <container_id>` 를 통해 컨테이너가 정상적으로 실행됐는지 확인하고,
 직접 localhost:5555에 접속해 확인해봅니다.
