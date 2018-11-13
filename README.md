@@ -213,19 +213,19 @@ ex) ubuntu:16.04
 
 ## 9. [Jenkins](https://jenkins.io/)
 
-> Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.  
+**Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.**  
 >
 > TravisCI, CircleCI 등 여러 CI툴이 존재하지만 해당 실습에서는 대중적으로 많이 선택받고 있는 Jenkins를 사용합니다.  
 > Jenkins는 Master/Agent로 구성되어 있으며, 굉장히 많은 플러그인을 제공합니다.
 (Slack 알림 플러그인도 존재!)  
 > 해당 실습에서는 Master만을 이용하여 진행합니다.  
 
-> **CI/CD** 란?  
+**CI/CD** 란?  
 > CI(Continuous Integration) : 지속적 통합  
 > CD(Continuous Delivery) : 지속적 배포  
 > 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
 > 
-> Jenkins를 사용하면 다음 과정을 자동화 할 수 있습니다.  
+**Jenkins를 사용하면 다음 과정을 자동화 할 수 있습니다.**  
 >
 > 1. 소스 저장소에 최신 소스를 Push (여기까진 개발자의 몫)
 > 2. 전체 소스를 다운로드
