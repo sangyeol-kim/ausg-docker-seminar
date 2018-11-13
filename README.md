@@ -151,7 +151,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
     RUN apt-get install -y nodejs
     RUN apt-get install -y npm 
 ```
-**Dockerfile에서 apt-get을 사용할 때 반드시 -y 옵션을 사용해주세요**
+> **Dockerfile에서 apt-get을 사용할 때 반드시 -y 옵션을 사용해주세요**
 
 3. `$ docker build -t <image_name>:<tag> .`
 > 여기서 . 의 의미는 현재 디렉토리 아래에 있는 Dockerfile을 이용해 이미지를 만들겠다는 의미입니다.  
