@@ -307,6 +307,28 @@ docker run \
 
 ![jenkins](./assets/images/jenkins_8.png)
 
+> Pipeline Script에서 DockerHub 계정을 사용하기 위해 Credentials을 생성해보겠습니다.
+> 해당 실습에서는 Credentials Binding Plugin을 사용합니다.
+
+- #### Jenkins 메인 화면으로 이동하고 화면 왼쪽의 Credentials를 클릭합니다.
+
+![jenkins](./assets/images/jenkins_10.png)
+
+- #### Global을 선택합니다.
+
+![jenkins](./assets/images/jenkins_11.png)
+
+- #### 왼쪽에서 Add Credentials를 선택합니다.
+
+![jenkins](./assets/images/jenkins_12.png)
+
+- #### 도커허브 계정을 입력합니다.
+> ID는 반드시 기억해주세요
+
+- 이제 Pipeline Stage를 작성해보겠습니다.  구성으로 들어가주세요.
+
+![jenkins](./assets/images/set.png)
+
 - #### Pipeline Script에 다음 코드를 입력합니다.
 
 ```
@@ -339,24 +361,6 @@ node{
 ```
 
 ![jenkins](./assets/images/jenkins_9.png)
-
-> Pipeline Script에서 DockerHub 계정을 사용하기 위해 Credentials을 생성해보겠습니다.
-> 해당 실습에서는 Credentials Binding Plugin을 사용합니다.
-
-- #### Jenkins 메인 화면으로 이동하고 화면 왼쪽의 Credentials를 클릭합니다.
-
-![jenkins](./assets/images/jenkins_10.png)
-
-- #### Global을 선택합니다.
-
-![jenkins](./assets/images/jenkins_11.png)
-
-- #### 왼쪽에서 Add Credentials를 선택합니다.
-
-![jenkins](./assets/images/jenkins_12.png)
-
-- #### 도커허브 계정을 입력합니다.
-> ID는 반드시 기억해주세요
 
 ![jenkins](./assets/images/jenkins_13.png)
 
