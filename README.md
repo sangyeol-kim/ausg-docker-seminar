@@ -159,7 +159,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 >
 > 보통 commit이 아닌 Dockerfile을 이용해 이미지를 만들게 됩니다.
 >
-4. 이미지가 생성되었는지 확인해보겠습니다.
+4. 명령어를 통해 이미지가 생성되었는지 확인해보겠습니다.  
 `$ docker images | grep <image_name>:<tag>`  
 
 
@@ -189,7 +189,7 @@ ex) ubuntu:16.04
 > CMD 명령어는 도커를 실행했을 때 기본적으로 실행될 명령어를 지정합니다.
 > 예를 들어 이전에 실행했던 `$docker run -it ubuntu:latest bash` 에서 bash는 기본 명령어로 지정되어 있기 때문에 생략해도 실행이 됩니다.
 
-## 8. Dockerfile로 이미지 만들기
+## 8. Dockerfile로 간단한 애플리케이션 실행하기
 > 해당 실습에서는 Github가 이용됩니다.  
 > 해당 실습은 Node.js 공식문서를 이용합니다.
 > https://nodejs.org/ko/docs/guides/nodejs-docker-webapp/
@@ -199,22 +199,39 @@ ex) ubuntu:16.04
 1. https://github.com/sangyeol-kim/docker_node_test 에 접속해 해당 프로젝트를 clone 해옵니다.
 > 해당 프로젝트는 Node.js로 작성된 hello, world!를 출력하는 간단한 웹 애플리케이션입니다.
 
-2. 해당 폴더로 접근해 `$ docker buld -t <image_name>:<tag>` 를 입력합니다.
-> -t는 이미지에 이름을 부여하는 옵션이며, tag는 <image_name>:01과 같이 자유롭게 입력하시면 됩니다.  
+2. 해당 폴더로 접근해 `$ docker build -t <dockerhub_id>/<image_name>:<tag> .` 을 입력합니다.
+> 다음 실습에서 해당 이미지를 DockerHub에 업로드 할 예정입니다.
+> DockerHub에 이미지를 올리기 위해서는 이미지 이름을 <dockerhub_id>/<image_name>로 생성해야 합니다.
 
-3. `$ docker run -p 5555:4567 -d <image_name>:<tag>`
+3. `$ docker run -p 3000:3000 <-d> <image_name>:<tag>`
 > -d 옵션을 주면 백그라운드에서 컨테이너가 실행됩니다.  
-> -p 옵션을 통해 컨테이너 내부의 4567 port와 호스트의 5555 port를 연결합니다.
+> -p 옵션을 통해 컨테이너 내부의 3000 port와 호스트의 3000 port를 연결합니다.
 
 4. `$ docker logs <container_id>` 를 통해 컨테이너가 정상적으로 실행됐는지 확인하고,
 직접 localhost:5555에 접속해 확인해봅니다.
 > Hello, world!가 정상적으로 출력된다면 실습을 성공적으로 마치셨습니다 :)
 
 5. 컨테이너 내부에 접근하는 방법
-> `$ docker exec -it <container_id> bash`
+`$ docker exec -it <container_id> bash`
+
+## 9. DockerHub에 이미지 올리기
+> 해당 실습에서는 DockerHub 계정이 필요합니다.
+
+1. DockerHub에 로그인 합니다. 
+`$ docker login`
+
+2. DockerHub에 방금 생성한 이미지를 Push 합니다.
+`$ docker push <dockerhub_id>/<image_name>:<tag>`
+
+3. [DockerHub](https://hub.docker.com/)로 이동합니다.
+> 아래와 같이 Repository가 생성되었으면 성공입니다!
+> DockerHub는 Repository를 별도로 생성하지 않더라도 이미지명에 따라 자동으로 생성합니다.
+> 같은 이름의 이미지라면 tag에 따라서 버전별로 저장됩니다.
+
+![jenkins](./assets/images/dockerhub.png)
 
 
-## 9. [Jenkins](https://jenkins.io/)
+## 10. [Jenkins](https://jenkins.io/)
 
 **Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.**  
 >
@@ -236,7 +253,7 @@ ex) ubuntu:16.04
 >
 > Test, Container Update 등 더 많은 자동화가 가능하지만 해당 실습에서는 위 세 가지 과정만 자동화합니다.
 
-## 10. Jenkins 실습
+## 11. Jenkins 실습
 > 해당 실습에서는 DockerHub 계정이 필요합니다.
 >
 > 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
