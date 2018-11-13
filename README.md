@@ -334,9 +334,10 @@ docker run \
 
 ![jenkins](./assets/images/pipeline.png)
 
+> **Credential_ID 에는 아까 생성한 Credential ID를 적어주세요!**
 ```
 node{
-    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_HUB_ID', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
+    withCredentials([usernamePassword(credentialsId: 'Credential_ID', usernameVariable: 'DOCKER_HUB_ID', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
         stage('Pull') {
             git 'https://github.com/sangyeol-kim/docker_node_test'
         }
