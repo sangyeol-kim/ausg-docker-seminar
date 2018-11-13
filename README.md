@@ -225,15 +225,13 @@ ex) ubuntu:16.04
 > CD(Continuous Delivery) : 지속적 배포  
 > 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
 > 
-**Jenkins를 사용하면 다음 과정을 자동화 할 수 있습니다.**  
+**Jenkins를 이용해 다음과 같은 과정을 자동화 할 수 있습니다.**  
 >
-> 1. 소스 저장소에 최신 소스를 Push (여기까진 개발자의 몫)
-> 2. 전체 소스를 다운로드
-> 3. 테스트
-> 4. 도커 이미지 생성
-> 5. 도커 이미지 저장 (DockerHub에 Push)
-> 6. 애플리케이션 업데이트 (각 서버마다 떠있는 컨테이너에 새로운 이미지를 업데이트)
-
+> 1. Pull (Github Repository)
+> 2. Build (Docker Image)
+> 3. Push (DockerHub)
+>
+> Test, Container Update 등 더 많은 자동화가 가능하지만 해당 실습에서는 위 세 가지 과정만 자동화합니다.
 
 ## 10. Jenkins Demo 01
 > 해당 실습에서는 DockerHub 계정이 필요합니다.
@@ -315,7 +313,33 @@ docker run \
 - #### Pipeline Script에 다음 코드를 입력합니다.
 
 ```
-
+node{
+    withCredentials([usernamePassword(credentialsId: 'dockerhub', usernameVariable: 'DOCKER_HUB_ID', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
+        stage('Pull') {
+            git 'https://github.com/sangyeol-kim/docker_node_test'
+        }
+        stage('Build') {
+            sh(script: 'docker build --force-rm=true -t ${DOCKER_HUB_ID}/node-jenkins:latest .')
+            // 빌드가 실패한 경우에는 컨테이너 제거
+        }
+        stage('Push') {
+            sh(script: 'docker login -u ${DOCKER_HUB_ID} -p ${DOCKER_HUB_PASSWORD}')
+            sh(script: 'docker push ${DOCKER_HUB_ID}/node-jenkins:latest')
+        }
+        stage('Deploy') {
+            try {
+                stage ('Wait') {
+                    sh(script: 'docker stop node-jenkins') 
+                    sh(script: 'docker rm node-jenkins')
+                    sh(script: '')
+                }
+            } catch (err) {
+                echo 'node-jenkins container not exists'
+            }
+            sh(script: 'docker run -d -p 3000:4567 --name=node-jenkins ${DOCKER_HUB_ID}/node-jenkins:latest')
+        }
+    }
+}
 ```
 
 ![jenkins](./assets/images/jenkins_9.png)
@@ -346,7 +370,8 @@ docker run \
 
 - #### 다음과 같이 빌드가 완료되면 [DockerHub](https://hub.docker.com/)로 이동합니다.
 
-![jenkins](./assets/images/jenkins_16.png)
+![jenkins](./assets/images/jenkins_stage.png)
+> 첫 컨테이너를 실행할때는 wait stage에서 failed가 발생하는 것이 정상입니다.
 
 - #### 이미지가 생성되었습니다!
 
