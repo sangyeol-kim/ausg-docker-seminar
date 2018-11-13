@@ -245,7 +245,7 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v $(디렉토리):/var/jenkins_home \
+  -v $(데이터 저장될 디렉토리):/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   jenkins/jenkins:lts
 ```
@@ -257,7 +257,7 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v $(디렉토리):/var/jenkins_home \
+  -v $(데이터 저장될 디렉토리):/var/jenkins_home \
   jenkins/jenkins:lts
 ```
 
@@ -265,6 +265,9 @@ docker run \
 **MacOS: /Users/$(User_name)/Download/jenkins**
 **Windows: //c/jenkins 와 같이 입력해주세요.**  
 
+> Jenkins Official Image(jenkins:lts)는 Docker 및 Docker-Compose가 설치되어 있지 않기 때문에  
+별도의 이미지(subicura/jenkins:02)를 사용합니다.
+> DockerHub: https://hub.docker.com/r/subicura/jenkins/
 > Jenkins는 기본적으로 8080 포트를 이용하며, 그 외의 포트를 이용하기 위해서는 별도의 수정이 필요합니다.  
 
 - #### 명령어를 실행하면 다음과 같이 키 값이 나옵니다.
