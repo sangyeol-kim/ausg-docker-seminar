@@ -242,16 +242,27 @@ ex) ubuntu:16.04
 
 **MacOS**
 ```
-docker run -u root --rm -p 8080:8080 --name jenkins \
--v $(디렉토리):/var/jenkins_home \
--v /var/run/docker.sock:/var/run/docker.sock \
-twysgs/jenkins:latest
+docker run \
+  -u root \
+  --rm \
+  -d \
+  -p 8080:8080 \
+  --name jenkins \
+  -v $(디렉토리):/var/jenkins_home \
+  -v /var/run/docker.sock:/var/run/docker.sock \
+  twysgs/jenkins:latest
 ```
+
 **Windows**
 ```
-docker run -u root --rm -p 8080:8080 --name jenkins \
--v $(디렉토리):/var/jenkins_home \
-twysgs/jenkins:latest
+docker run \
+  -u root \
+  --rm \
+  -d \
+  -p 8080:8080 \
+  --name jenkins \
+  -v $(디렉토리):/var/jenkins_home \
+  twysgs/jenkins:latest
 ```
 
 > $(디렉토리)에는 
@@ -310,6 +321,7 @@ twysgs/jenkins:latest
 ![jenkins](./assets/images/jenkins_9.png)
 
 > Pipeline Script에서 DockerHub 계정을 사용하기 위해 Credentials을 생성해보겠습니다.
+> 해당 실습에서는 Credentials Binding Plugin을 사용합니다.
 
 - #### Jenkins 메인 화면으로 이동하고 화면 왼쪽의 Credentials를 클릭합니다.
 
@@ -324,7 +336,7 @@ twysgs/jenkins:latest
 ![jenkins](./assets/images/jenkins_12.png)
 
 - #### 도커허브 계정을 입력합니다.
-> ID는 반드시 dockerhub로 해주세요
+> ID는 반드시 기억해주세요
 
 ![jenkins](./assets/images/jenkins_13.png)
 
