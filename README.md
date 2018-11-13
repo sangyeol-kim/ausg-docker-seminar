@@ -271,47 +271,47 @@ twysgs/jenkins:latest
 > 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.  
 > Jenkins는 기본적으로 8080 포트를 이용하며, 그 외의 포트를 이용하기 위해서는 별도의 수정이 필요합니다.  
 
-- #### 명령어를 실행하면 다음과 같이 키 값이 나옵니다.
+- ### 명령어를 실행하면 다음과 같이 키 값이 나옵니다.
 
 ![jenkins](./assets/images/jenkins_0.png)
 
-- localhost:8080으로 접속 한 후 키 값을 입력하고 Continue를 클릭합니다.
+- ### localhost:8080으로 접속 한 후 키 값을 입력하고 Continue를 클릭합니다.
 
 ![jenkins](./assets/images/jenkins_1.png)
 
-- Install suggested plugins 를 선택합니다.
+- ### Install suggested plugins 를 선택합니다.
 
 ![jenkins](./assets/images/jenkins_2.png)
 
-- 설치가 끝나면 계정을 생성해줍니다.
+- ### 설치가 끝나면 계정을 생성해줍니다.
 
 ![jenkins](./assets/images/jenkins_3.png)
 
-- Save and Finish를 클릭합니다.
+- ### Save and Finish를 클릭합니다.
 
 ![jenkins](./assets/images/jenkins_4.png)
 
-- Start using Jenkins를 클릭해줍니다.
+- ### Start using Jenkins를 클릭해줍니다.
 
 ![jenkins](./assets/images/jenkins_5.png)
 
-- 새 작업을 생성합니다.
+- ### 새 작업을 생성합니다.
 
 ![jenkins](./assets/images/jenkins_6.png)
 
-- 이름을 지정하고, 해당 세미나에서는 Pipeline을 사용하기 때문에 Pipeline을 선택하고 OK를 클릭합니다.
+- ### 이름을 지정하고, 해당 세미나에서는 Pipeline을 사용하기 때문에 Pipeline을 선택하고 OK를 클릭합니다.
 > Pipeline을 선택하면 빋드하고 배포하는 과정을 Stage에 따라 설정하게 됩니다.
 
 ![jenkins](./assets/images/jenkins_7.png)
 
-- 옵션 중 **Do not allow concurrent builds와 GitHub project**를 선택합니다.
+- ### 옵션 중 **Do not allow concurrent builds와 GitHub project**를 선택합니다.
 > Do not allow concurrent builds 옵션은 빌드가 진행중인 상태에서는 다음 빌드를 진행하지 않습니다.  
 > Github project는 Github 주소 등록을 위해 선택합니다.
 > Github 주소: https://github.com/sangyeol-kim/docker_node_test
 
 ![jenkins](./assets/images/jenkins_8.png)
 
-- Pipeline Script에 다음 코드를 입력합니다.
+- ### Pipeline Script에 다음 코드를 입력합니다.
 
 ```
 node {
@@ -354,32 +354,32 @@ node {
 
 > Pipeline Script에서 DockerHub 계정을 사용하기 위해 Credentials을 생성해보겠습니다.
 
-- Jenkins 메인 화면으로 이동하고 화면 왼쪽의 Credentials를 클릭합니다.
+- ### Jenkins 메인 화면으로 이동하고 화면 왼쪽의 Credentials를 클릭합니다.
 
 ![jenkins](./assets/images/jenkins_10.png)
 
-- Global을 선택합니다.
+- ### Global을 선택합니다.
 
 ![jenkins](./assets/images/jenkins_11.png)
 
-- 왼쪽에서 Add Credentials를 선택합니다.
+- ### 왼쪽에서 Add Credentials를 선택합니다.
 
 ![jenkins](./assets/images/jenkins_12.png)
 
-- 도커허브 계정을 입력합니다.
+- ### 도커허브 계정을 입력합니다.
 > ID는 반드시 dockerhub로 해주세요
 
 ![jenkins](./assets/images/jenkins_13.png)
 
-- Jenkins 프로젝트로 돌아와서 Build Now를 클릭합니다.
+- ### Jenkins 프로젝트로 돌아와서 Build Now를 클릭합니다.
 
 ![jenkins](./assets/images/jenkins_14.png)
 
-- 다음과 같이 빌드가 완료되면 DockerHub로 이동합니다.
+- ### 다음과 같이 빌드가 완료되면 DockerHub로 이동합니다.
 
 ![jenkins](./assets/images/jenkins_15.png)
 
-- 이미지가 생성되었습니다!
+- ### 이미지가 생성되었습니다!
 
 ![jenkins](./assets/images/jenkins_16.png)
 
