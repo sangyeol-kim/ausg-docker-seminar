@@ -223,7 +223,7 @@ ex) ubuntu:16.04
 > `$ docker exec -it <container_id> bash`
 
 
-## 9. Jenkins
+## 9. [Jenkins](https://jenkins.io/)
 
 > Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.  
 >
@@ -377,7 +377,7 @@ node {
 
 ![jenkins](./assets/images/jenkins_14.png)
 
-- #### 다음과 같이 빌드가 완료되면 DockerHub로 이동합니다.
+- #### 다음과 같이 빌드가 완료되면 [DockerHub](https://hub.docker.com/)로 이동합니다.
 
 ![jenkins](./assets/images/jenkins_16.png)
 
