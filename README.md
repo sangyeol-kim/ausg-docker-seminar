@@ -200,12 +200,12 @@ ex) ubuntu:16.04
 > 해당 프로젝트는 Node.js로 작성된 hello, world!를 출력하는 간단한 웹 애플리케이션입니다.
 
 2. 해당 폴더로 접근해 `$ docker build -t <dockerhub_id>/<image_name>:<tag> .` 을 입력합니다.
-> 다음 실습에서 해당 이미지를 DockerHub에 업로드 할 예정입니다.
+> 다음 실습에서 해당 이미지를 DockerHub에 업로드 할 예정입니다.  
 > DockerHub에 이미지를 올리기 위해서는 이미지 이름을 <dockerhub_id>/<image_name>로 생성해야 합니다.
 
 3. `$ docker run -p 3000:3000 <-d> <image_name>:<tag>`
 > -d 옵션을 주면 백그라운드에서 컨테이너가 실행됩니다.  
-> -p 옵션을 통해 컨테이너 내부의 3000 port와 호스트의 3000 port를 연결합니다.
+> -p 옵션을 통해 컨테이너 내부와 호스트의 포트를 연결합니다.
 
 4. `$ docker logs <container_id>` 를 통해 컨테이너가 정상적으로 실행됐는지 확인하고,
 직접 localhost:5555에 접속해 확인해봅니다.
@@ -217,16 +217,16 @@ ex) ubuntu:16.04
 ## 9. DockerHub에 이미지 올리기
 > 해당 실습에서는 DockerHub 계정이 필요합니다.
 
-1. DockerHub에 로그인 합니다. 
+1. DockerHub에 로그인 합니다.  
 `$ docker login`
 
-2. DockerHub에 방금 생성한 이미지를 Push 합니다.
+2. DockerHub에 방금 생성한 이미지를 Push 합니다.  
 `$ docker push <dockerhub_id>/<image_name>:<tag>`
 
-3. [DockerHub](https://hub.docker.com/)로 이동합니다.
-> 아래와 같이 Repository가 생성되었으면 성공입니다!
-> DockerHub는 Repository를 별도로 생성하지 않더라도 이미지명에 따라 자동으로 생성합니다.
-> 같은 이름의 이미지라면 tag에 따라서 버전별로 저장됩니다.
+3. [DockerHub](https://hub.docker.com/)로 이동합니다.  
+> 아래와 같이 Repository가 생성되었으면 성공입니다!  
+> DockerHub는 Repository를 별도로 생성하지 않더라도 이미지명에 따라 자동으로 생성합니다.  
+> 같은 이름의 이미지라면 tag에 따라서 버전별로 저장됩니다.  
 
 ![jenkins](./assets/images/dockerhub.png)
 
