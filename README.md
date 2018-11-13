@@ -5,19 +5,6 @@
 
 - AWS 및 Dockerhub 계정 그리고 호스트 환경에 맞는 Docker 설치가 필요합니다.
 - http://meetu.ps/e/G2jdh/CRhtw/f 밋업 공지를 확인해주세요.
-<!-->
-## 1. GitHub Repository 만들기
-
-
-1. 홈페이지 화면에서 "New repository"를 클릭합니다.
-
-![github](./assets/images/github_0.png)
-
-2. 이름과 내용을 작성하고 생성해주세요.
-
-![github](./assets/images/github_1.png)
--->
-
 
 ## 1. [Docker](https://www.docker.com/)
 
