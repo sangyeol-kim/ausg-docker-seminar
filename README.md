@@ -266,7 +266,7 @@ docker run \
 ```
 
 > $(디렉토리)에는 
-**MacOS: /Users/${USER}/Download/jenkins**
+**MacOS: /Users/$(User_name)/Download/jenkins**
 **Windows: //c/jenkins 와 같이 입력해주세요.**  
 
 > 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.  
