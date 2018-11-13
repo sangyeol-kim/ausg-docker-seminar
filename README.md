@@ -247,7 +247,7 @@ docker run \
   --name jenkins \
   -v $(데이터 저장될 디렉토리):/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  jenkins/jenkins:lts
+  subicura/jenkins:02
 ```
 
 **Windows**
@@ -258,7 +258,7 @@ docker run \
   -p 8080:8080 \
   --name jenkins \
   -v $(데이터 저장될 디렉토리):/var/jenkins_home \
-  jenkins/jenkins:lts
+  subicura/jenkins:02
 ```
 
 > $(디렉토리)에는 
