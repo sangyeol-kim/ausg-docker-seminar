@@ -16,7 +16,7 @@
 > 그 외 에도 AWS와 같은 클라우드 환경을 사용할때도 이미지 단위의 배포가 가능하며,  
 트래픽 문제가 발생했을 경우 Docker 컨테이너를 원하는만큼 생성해 처리량을 쉽게 늘릴 수 있습니다.
 
-## 2. Docker Demo 01
+## 2. Docker 실습
 
 
 1. hello, world 출력하기
@@ -186,7 +186,7 @@ ex) ubuntu:16.04
 > CMD 명령어는 도커를 실행했을 때 기본적으로 실행될 명령어를 지정합니다.
 > 예를 들어 이전에 실행했던 `$docker run -it ubuntu:latest bash` 에서 bash는 기본 명령어로 지정되어 있기 때문에 생략해도 실행이 됩니다.
 
-## 8. Dockerfile로 웹 애플리케이션 이미지 만들기
+## 8. Dockerfile로 이미지 만들기
 > 해당 실습에서는 Github가 이용됩니다.  
 > 해당 실습은 Node.js 공식문서를 이용합니다.
 > https://nodejs.org/ko/docs/guides/nodejs-docker-webapp/
@@ -218,22 +218,22 @@ ex) ubuntu:16.04
 > TravisCI, CircleCI 등 여러 CI툴이 존재하지만 해당 실습에서는 대중적으로 많이 선택받고 있는 Jenkins를 사용합니다.  
 > Jenkins는 Master/Agent로 구성되어 있으며, 굉장히 많은 플러그인을 제공합니다.
 (Slack 알림 플러그인도 존재!)  
-> 해당 실습에서는 Master만을 이용하여 진행합니다.  
 
 **CI/CD** 란?  
 > CI(Continuous Integration) : 지속적 통합  
 > CD(Continuous Delivery) : 지속적 배포  
 > 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
 > 
-**Jenkins를 이용해 다음과 같은 과정을 자동화 할 수 있습니다.**  
+**해당 실습에서는 enkins를 이용해 다음과 같은 과정을 자동화합니다.**  
 >
 > 1. Pull (Github Repository)
 > 2. Build (Docker Image)
 > 3. Push (DockerHub)
+> 4. Deploy
 >
 > Test, Container Update 등 더 많은 자동화가 가능하지만 해당 실습에서는 위 세 가지 과정만 자동화합니다.
 
-## 10. Jenkins Demo 01
+## 10. Jenkins 실습
 > 해당 실습에서는 DockerHub 계정이 필요합니다.
 >
 > 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
@@ -243,12 +243,11 @@ ex) ubuntu:16.04
 docker run \
   -u root \
   --rm \
-  -d \
   -p 8080:8080 \
   --name jenkins \
   -v $(디렉토리):/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  twysgs/jenkins:latest
+  jenkins/jenkins:lts
 ```
 
 **Windows**
@@ -256,18 +255,16 @@ docker run \
 docker run \
   -u root \
   --rm \
-  -d \
   -p 8080:8080 \
   --name jenkins \
   -v $(디렉토리):/var/jenkins_home \
-  twysgs/jenkins:latest
+  jenkins/jenkins:lts
 ```
 
 > $(디렉토리)에는 
 **MacOS: /Users/$(User_name)/Download/jenkins**
 **Windows: //c/jenkins 와 같이 입력해주세요.**  
 
-> 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.  
 > Jenkins는 기본적으로 8080 포트를 이용하며, 그 외의 포트를 이용하기 위해서는 별도의 수정이 필요합니다.  
 
 - #### 명령어를 실행하면 다음과 같이 키 값이 나옵니다.
@@ -331,7 +328,6 @@ node{
                 stage ('Wait') {
                     sh(script: 'docker stop node-jenkins') 
                     sh(script: 'docker rm node-jenkins')
-                    sh(script: '')
                 }
             } catch (err) {
                 echo 'node-jenkins container not exists'
