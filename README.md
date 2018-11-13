@@ -381,7 +381,7 @@ node{
             } catch (err) {
                 echo 'node-jenkins container not exists'
             }
-            sh(script: 'docker run -d -p 3000:4567 --name=node-jenkins ${DOCKER_HUB_ID}/node-jenkins:latest')
+            sh(script: 'docker run -d -p 3000:3000 --name=node-jenkins ${DOCKER_HUB_ID}/node-jenkins:latest')
         }
     }
 }
