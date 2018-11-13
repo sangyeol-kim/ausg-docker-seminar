@@ -271,7 +271,7 @@ twysgs/jenkins:latest
 > 기본 Jenkins 이미지에는 Docker와 Docker-Compose가 설치되어 있지 않기 때문에 기본 이미지가 아닌 별도의 이미지를 사용합니다.  
 > Jenkins는 기본적으로 8080 포트를 이용하며, 그 외의 포트를 이용하기 위해서는 별도의 수정이 필요합니다.  
 
-- 명령어를 실행하면 다음과 같이 키 값이 나옵니다.
+- ####명령어를 실행하면 다음과 같이 키 값이 나옵니다.
 
 ![jenkins](./assets/images/jenkins_0.png)
 
@@ -374,6 +374,17 @@ node {
 - Jenkins 프로젝트로 돌아와서 Build Now를 클릭합니다.
 
 ![jenkins](./assets/images/jenkins_14.png)
+
+- 다음과 같이 빌드가 완료되면 DockerHub로 이동합니다.
+
+![jenkins](./assets/images/jenkins_15.png)
+
+- 이미지가 생성되었습니다!
+
+![jenkins](./assets/images/jenkins_16.png)
+
+> 지금까지 Jenkins를 통해 Github Repository로 부터 소스를 다운로드 받고 이미지를 배포하는 과정을 자동화 했습니다.
+
 
 
 
