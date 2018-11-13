@@ -304,7 +304,40 @@ twysgs/jenkins:latest
 - #### Pipeline Script에 다음 코드를 입력합니다.
 
 ```
-
+node {
+  withCredentials([[$class: 'UsernamePasswordMultiBinding',
+      credentialsId: 'dockerhub',
+      usernameVariable: 'DOCKER_USER_ID',
+      passwordVariable: 'DOCKER_USER_PASSWORD']]) {
+      stage('Pull') {
+          git 'https://github.com/sangyeol-kim/docker_node_test'
+      }
+      stage('Unit Test') {
+      }
+      stage('Build') {
+          sh(script: '''docker build --force-rm=true \
+            -t ${DOCKER_USER_ID}/node-jenkins:latest .''')
+      }
+      stage('Tag') {
+        sh(script: '''docker tag ${DOCKER_USER_ID}/node-jenkins \
+            ${DOCKER_USER_ID}/node-jenkins:${BUILD_NUMBER}''')
+      }
+      stage('Push') {
+        sh(script: 'docker login -u ${DOCKER_USER_ID} -p ${DOCKER_USER_PASSWORD}')
+        sh(script: 'docker push ${DOCKER_USER_ID}/node-jenkins:${BUILD_NUMBER}')
+        sh(script: 'docker push ${DOCKER_USER_ID}/node-jenkins:latest')
+      }
+      stage('Deploy') {
+        try {
+            sh(script: 'docker stop node-jenkins')
+            sh(script: 'docker rm node-jenkins') 
+        } catch(e) {
+            echo "No node-jenkins container exists"
+        }
+        sh(script: '''docker run -d -p 3000:4567 --name=node-jenkins \
+            ${DOCKER_USER_ID}/node-jenkins:${BUILD_NUMBER}''')
+      }
+} }
 ```
 
 ![jenkins](./assets/images/jenkins_9.png)
