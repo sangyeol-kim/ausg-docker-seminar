@@ -308,7 +308,7 @@ twysgs/jenkins:latest
 
 - #### 옵션 중 **Do not allow concurrent builds와 GitHub project**를 선택합니다.
 > Do not allow concurrent builds 옵션은 빌드가 진행중인 상태에서는 다음 빌드를 진행하지 않습니다.  
-> Github project는 Github 주소 등록을 위해 선택합니다.
+> Github project는 Github 주소 등록을 위해 선택합니다.  
 > Github 주소: https://github.com/sangyeol-kim/docker_node_test
 
 ![jenkins](./assets/images/jenkins_8.png)
@@ -379,11 +379,11 @@ node {
 
 - #### 다음과 같이 빌드가 완료되면 DockerHub로 이동합니다.
 
-![jenkins](./assets/images/jenkins_15.png)
+![jenkins](./assets/images/jenkins_16.png)
 
 - #### 이미지가 생성되었습니다!
 
-![jenkins](./assets/images/jenkins_16.png)
+![jenkins](./assets/images/jenkins_15.png)
 
 > 지금까지 Jenkins를 통해 Github Repository로 부터 소스를 다운로드 받고 이미지를 배포하는 과정을 자동화 했습니다.
 
