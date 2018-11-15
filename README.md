@@ -110,12 +110,12 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 `$ docker run -it ubuntu:latest bash`
 > -it 옵션은 bash를 실행한 후 명령어를 입력 할 수 있게 해줍니다.
 
-2. Package Manager 업데이트
+2. Package Manager 업데이트  
 `$ apt-get update`
-> 최신버전이 아닐 시 제대로 설치되지 않는 버그가 발생할 수 있습니다.
+> 최신 버전이 아닐 시 제대로 설치가 되지 않을 수 있습니다.
 
 3. Node.js 및 npm 설치  
-`$ apt-get install nodejs`
+`$ apt-get install nodejs`  
 `$ apt-get install npm`  
 > **기본 ubuntu 이미지로 실행한 컨테이너에 Node.js와 npm이 설치된 상태**
 
