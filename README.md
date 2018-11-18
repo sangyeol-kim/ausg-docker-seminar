@@ -38,8 +38,9 @@
     이전의 `hello world`는 호스트 환경에서 실행한 ubuntu 명령어 였지만  
     지금은 직접 ubuntu shell로 들어와 `hello world`를 출력했습니다.
     3. `$ ls`  
-    ubuntu 컨테이너 이기 때문에 맥이나 윈도우가 아닌 ubuntu 파일 시스템을 확인할 수 있습니다.  
-
+    ubuntu 컨테이너 이기 때문에 맥이나 윈도우가 아닌 ubuntu 파일 시스템을 확인할 수 있습니다.
+    4. `$ exit`
+    실습이 끝나 ubuntu 컨테이너를 종료하고, 호스트 환경으로 돌아갑니다.
 ## 3. Docker에 대한 이해 
 
 
@@ -58,7 +59,7 @@
     >
     > Docker는 Linux Container 기술이기 때문에 MacOS 또는 Windows에서 사용 할 경우
     각각의 가상화 환경(xhyve / hyper-V)에서 돌아갑니다.  
-
+    > 그렇기 때문에 가상화 환경을 지원하지 않는 CPU로 작업한다면 제대로 동작하지 않습니다.
 
 3. 이미지
 
@@ -109,6 +110,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 1. ubuntu Container 실행  
 `$ docker run -it ubuntu:latest bash`
 > -it 옵션은 bash를 실행한 후 명령어를 입력 할 수 있게 해줍니다.
+> docker는 기본적으로 'root'권한으로 실행됩니다.
 
 2. Package Manager 업데이트  
 `$ apt-get update`
@@ -119,13 +121,18 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 `$ apt-get install npm`  
 > **기본 ubuntu 이미지로 실행한 컨테이너에 Node.js와 npm이 설치된 상태**
 
-4. Commit Command를 이용한 이미지 생성  
+4. 호스트 환경으로 돌아가기
+`$ exit`
+
+5. Commit Command를 이용한 이미지 생성  
 `docker commit <container_id> <image_name>:<tag>`
+> 종료된 컨테이너의 container_id는 'docker ps -a'를 통해 확인할 수 있습니다.
+> 'image_name'과 'tag'는 임의로 설정할 수 있습니다.
 
-5. 이미지 확인  
-`docekr images | grep <image_name>`
+6. 이미지 확인
+`docker images | grep <image_name>`
 
-6. 생성한 이미지를 이용해 켄테이너 실행  
+7. 생성한 이미지를 이용해 컨테이너 실행  
 `docker run -it <image_name>:<tag> bash`
 
 
