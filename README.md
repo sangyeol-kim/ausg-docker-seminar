@@ -422,11 +422,11 @@ node{
 ## 13. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
 > 해당 실습에서는 AWS 프리티어 계정과 AWS CLI가  필요합니다.
 
-- AWS CLI 설치하기
-> 각 환경에 맞게 설치를 진행해주세요
+- #### AWS CLI 설치하기
+> 각 환경에 맞게 설치를 진행해주세요  
 > https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/installing.html
 
-- AWS CLI Profile 등록  
+- #### AWS CLI Profile 등록  
 `$ aws configure`  
 > AWS Access Key ID:  
 > AWS Secret Access Key:  
@@ -465,7 +465,7 @@ node{
 ![aws](./assets/images/aws_6.png)
 
 
-- [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
+- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
 > ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
 > ECR은 ECS와 통합되어 Production Flow를 단순화 할 수 있습니다.
 
@@ -479,7 +479,7 @@ node{
 
 > Push 이후 no basic auth credentials가 반환 될 경우 `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/sample-node||')`를 입력해주세요.
 
-- 작업 정의(Task Definition) 생성
+- #### 작업 정의(Task Definition) 생성
 > Task function은 Docker CLI의 docker run 명령어와 같지만 여러 컨테이너에 작동합니다.
 
 1. 새 작업 정의를 생성을 선택해주세요.
@@ -502,7 +502,7 @@ node{
 
 9. 컨테이너 추가 후 작업 정의를 생성합니다.
 
-- 클러스트 생성
+- #### 클러스트 생성
 > 클러스트는 AWS 컨테이너가 실행되는 장소이며, EC2 Instance와 유사한 구성을 사용합니다.
 
 1. 클러스트 생성을 클릭하고, EC2 Linux + 네트워킹을 선택합니다.
@@ -510,7 +510,7 @@ node{
 2. 클러스트 이름과 EC2 Instance 유형을 지정하고 클러스터를 생성합니다. (프리티어 사이즈 확인)
 > 해당 실습에서는 EC2 Instance에 SSH를 포함하지 않습니다.
 
-- 서비스 생성
+- #### 서비스 생성
 
 1. 작업 정의로 이동하여 생성한 작업 정의를 선택합니다.
 
