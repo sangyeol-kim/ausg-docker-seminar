@@ -231,6 +231,9 @@ ex) ubuntu:16.04
 ![jenkins](./assets/images/dockerhub.png)
 
 
+---
+
+
 ## 10. [Jenkins](https://jenkins.io/)
 
 **Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.**  
@@ -404,6 +407,7 @@ node{
 > 해당 실습은 latest 이미자만 배포하며, 추가 Stage 설정으로 tag 별 배포도 가능합니다.
 
 
+---
 
 
 ## 12. [AWS ECS](https://aws.amazon.com/ko/ecs/)
@@ -468,7 +472,7 @@ node{
 ![aws](./assets/images/aws_6.png)
 
 
-- ### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
+- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
 > ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
 > ECR은 ECS와 통합되어 Production Flow를 단순화 할 수 있습니다.
 
@@ -480,7 +484,8 @@ node{
 
 > 커맨드 입력 전 `$ docker login`을 입력해주세요.
 
-> Push 이후 no basic auth credentials가 반환 될 경우 `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/sample-node||')`를 입력해주세요.
+> Push 이후 no basic auth credentials가 반환 될 경우  
+ `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/sample-node||')`를 입력해주세요.
 
 - #### 작업 정의(Task Definition) 생성
 > Task function은 Docker CLI의 docker run 명령어와 같지만 여러 컨테이너에 작동합니다.
