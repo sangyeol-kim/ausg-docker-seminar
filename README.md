@@ -22,7 +22,7 @@
 1. hello, world 출력하기
 
 
-    `$ docker run -it ubuntu:latest echo 'hello, world!`
+    `$ docker run -it ubuntu:latest echo 'hello, world!'`
 
 
     해당 명령어를 실행하면 호스트 환경이 아닌 ubuntu 환경의 컨테이너에서 `hello, world`가 출력됩니다.  
@@ -34,7 +34,7 @@
 
     1. `$ docker run -it ubuntu:latest bash`
         bash는 기본 커맨드이므로 생략 가능합니다.  
-    2. `$ echo hello, world`  
+    2. `$ echo 'hello, world'`  
     이전의 `hello world`는 호스트 환경에서 실행한 ubuntu 명령어 였지만  
     지금은 직접 ubuntu shell로 들어와 `hello world`를 출력했습니다.
     3. `$ ls`  
@@ -485,7 +485,7 @@ node{
 > 커맨드 입력 전 `$ docker login`을 입력해주세요.
 
 > Push 이후 no basic auth credentials가 반환 될 경우  
- `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/sample-node||')`를 입력해주세요.
+ `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/<Image_name>||')`를 입력해주세요.
 
 - #### 작업 정의(Task Definition) 생성
 > Task function은 Docker CLI의 docker run 명령어와 같지만 여러 컨테이너에 작동합니다.
