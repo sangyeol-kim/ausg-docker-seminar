@@ -404,57 +404,34 @@ node{
 > 해당 실습은 latest 이미자만 배포하며, 추가 Stage 설정으로 tag 별 배포도 가능합니다.
 
 
-
-
-## 10. [Jenkins](https://jenkins.io/)
-
-**Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.**  
->
-> TravisCI, CircleCI 등 여러 CI툴이 존재하지만 해당 실습에서는 대중적으로 많이 선택받고 있는 Jenkins를 사용합니다.  
-> Jenkins는 Master/Agent로 구성되어 있으며, 굉장히 많은 플러그인을 제공합니다.
-(Slack 알림 플러그인도 존재!)  
-
-**CI/CD** 란?  
-> CI(Continuous Integration) : 지속적 통합  
-> CD(Continuous Delivery) : 지속적 배포  
-> 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
-> 
-**해당 실습에서는 Jenkins를 이용해 다음과 같은 과정을 자동화합니다.**  
->
-> 1. Pull (Github Repository)
-> 2. Build (Docker Image)
-> 3. Push (DockerHub)
-> 4. Deploy
->
-
-## 12 [AWS ECS](https://aws.amazon.com/ko/ecs/)
+## 12. [AWS ECS](https://aws.amazon.com/ko/ecs/)
 
 **AWS ECS란 AWS에서 제공하는 서비스로서 도커를 쉽게 관리 및 서비스 할 수 있도록 도커의 상태, 도커 컨테이너 등을 AWS Web Interface와 CLI를 이용해 관리 할 수 있습니다.**  
-또한 ECS를 사용하면 도커의 에러메세지, 오토스케일링 등 다양한 DevOps 환경을 구성 할 수 있습니다.
+> 또한 ECS를 사용하면 도커의 에러메세지, 오토스케일링 등 다양한 DevOps 환경을 구성 할 수 있습니다.
 
-**Cluster란?**  
+**Cluster**  
 > 컨테이너 인스턴스들의 집합이며, 여러개의 EC2 Instance와 Docker Container로 구성 될 수 있습니다.
 
 **Task**
-> 클러스트 위에서 동작하는 Docker Container
+> 클러스트 위에서 동작하는 Docker Container  
 > Task Definition은 도커 컨테이너에 대한 설정으로 docker run에서 사용되는 작업을 설정 할 수 있습니다.
 
 **Service**
 > Task 내용들의 집합으로 컨테이너에 대한 자세한 설정을 할 수 있습니다.
 
-## 13 [AWS ECS 실습](https://aws.amazon.com/ko/ecs/)
+## 13. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
 > 해당 실습에서는 AWS 프리티어 계정과 AWS CLI가  필요합니다.
 
 - AWS CLI 설치하기
 > 각 환경에 맞게 설치를 진행해주세요
 > https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/installing.html
 
-- AWS CLI Profile 등록
-`$ aws configure`
-> AWS Access Key ID: 
-> AWS Secret Access Key: 
-> Default region name: ap-northeast-2 
-> Default output format: ENTER
+- AWS CLI Profile 등록  
+`$ aws configure`  
+> AWS Access Key ID:  
+> AWS Secret Access Key:  
+> Default region name: ap-northeast-2  
+> Default output format: ENTER  
 
 **AWS Credential이 없는 경우**
 1. AWS 콘솔 로그인 후 보안, 자격 증명 및 규정 준수 - IAM으로 이동합니다.
@@ -466,22 +443,27 @@ node{
 ![aws](./assets/images/aws_1.png)
 ![aws](./assets/images/aws_2.png)
 
+
 3. 사용자 이름과 프로그래밍 방식 액세스 선택
 
 ![aws](./assets/images/aws_3.png)
+
 
 4. 기존 정책 직접 연결 선택 후 AdministratorAccess 선택
 
 ![aws](./assets/images/aws_4.png)
 
+
 5. 나머지 설정 생략 후 사용자 만들기
 
 ![aws](./assets/images/aws_5.png)
+
 
 6. 액세스 키 ID와 비밀 액세스 키 확인
 > 비밀 액세스 키는 꼭 기억해주세요
 
 ![aws](./assets/images/aws_6.png)
+
 
 - [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
 > ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
