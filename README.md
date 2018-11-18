@@ -484,6 +484,8 @@ node{
 
 1. #### AWS 콘솔에서 컴퓨팅 - ECS로 이동합니다.
 
+![aws](./assets/images/ecr_0.png)
+
 2. #### 새 레포지토리를 생성하고, 안내되는 커맨드를 실행합니다.
 > 레포지토리 URL을 기억해주세요
 > 레포지토리 이름은 일관성을 위해 호스트 환경와 동일한 컨테이너 이름을 사용하는 것을 추천합니다.
@@ -492,27 +494,34 @@ node{
 
 > Push 이후 no basic auth credentials가 반환 될 경우  
  `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/<Image_name>||')`를 입력해주세요.
+![aws](./assets/images/ecr_3.png)
+![aws](./assets/images/ecr_1.png)
+![aws](./assets/images/ecr_2.png)
 
 - #### 작업 정의(Task Definition) 생성
 > Task function은 Docker CLI의 docker run 명령어와 같지만 여러 컨테이너에 작동합니다.
 
 1. #### 새 작업 정의를 생성을 선택해주세요.
 
+![aws](./assets/images/task0_.png)
+
 2. #### EC2를 선택해주세요.
+
+![aws](./assets/images/task1_.png)
 
 3. #### 작업 정의 이름을 입력해주세요.
 
+![aws](./assets/images/task_2.png)
+
 4. #### 컨테이너 추가를 선택해주세요.
 
-5. #### 컨테이너 이름을 입력해주세요.
+![aws](./assets/images/task_3.png)
+
+5. #### 컨테이너를 아래와 같이 구성해주세요.
 > 컨테이너 이름은 Push한 애플리케이션명을 사용해주세요.
+> 이미지 URL은 레포지토리 URL을 입력해주시면 됩니다.
 
-6. #### 이미지 URL을 등록해주세요.
-> 레포지토리 URL을 입력해주시면 됩니다.
-
-7. #### 메모미를 소프트 제한 : 512로 설정합니다.
-
-8. #### 호스트의 3000번 Port를 컨테이너의 3000번 Port와 매핑합니다.
+![aws](./assets/images/task_4.png)
 
 9. #### 컨테이너 추가 후 작업 정의를 생성합니다.
 
@@ -521,29 +530,44 @@ node{
 
 1. #### 클러스트 생성을 클릭하고, EC2 Linux + 네트워킹을 선택합니다.
 
-2. #### 클러스트 이름과 EC2 Instance 유형을 지정하고 클러스터를 생성합니다. (프리티어 사이즈 확인)
+![aws](./assets/images/cluster_0.png)
+![aws](./assets/images/cluster_1.png)
+
+2. #### 클러스트를 다음과 같이 구성하고 클러스터를 생성합니다. (프리티어 사이즈 확인)
 > 해당 실습에서는 EC2 Instance에 SSH를 포함하지 않습니다.
+
+![aws](./assets/images/cluster_2.png)
+![aws](./assets/images/cluster_3.png)
 
 - #### 서비스 생성
 
-1. #### 작업 정의로 이동하여 생성한 작업 정의를 선택합니다.
+1. #### 작업 정의로 이동하여 생성한 작업 정의 체크 후 드롭박스를 클릭하고 서비스 생성을 선택합니다.
 
-2. #### 생성한 작업 정의를 체크 후 작업 드롭박스를 클릭하고 서비스 생성을 선택합니다.
+![aws](./assets/images/service_0.png)
 
-3. #### 시작 유형은 EC2를 선택합니다.
-
-4. #### 서비스 이름을 입력하고 작업 개수는 1로 설정합니다.
-
-5. #### 나머지는 기본 설정을 따르고 서비스를 생성합니다.
+2. #### 서비스를 다음과 같이 구성하고 생성합니다.
+> 나머지는 기본 설정을 따르고 서비스를 생성해주세요.
 > 해당 실습에서는 로드밸런서와 오토스케일링 옵션을 사용하지 않습니다.
 
-6. #### 클러스터로 이동하여 생성한 클러스터를 선택합니다.
+![aws](./assets/images/service_1.png)
 
-7. #### EC2 인스턴스 - 컨테이너 인스턴스를 클릭합니다.
+- #### 서비스 확인
 
-8. #### Public DNS를 확인하고 접속합니다.
+1. #### 클러스터로 이동하여 생성한 클러스터를 선택합니다.
 
-9. #### `Hello, world!`
+![aws](./assets/images/final_0.png)
+
+2. #### EC2 인스턴스 - 컨테이너 인스턴스를 클릭합니다.
+
+![aws](./assets/images/final_1.png)
+
+3. #### Public DNS를 확인하고 접속합니다.
+
+![aws](./assets/images/final_2.png)
+
+4. #### `Hello, world!`
+
+![aws](./assets/images/final_3.png)
 
 ---
 
