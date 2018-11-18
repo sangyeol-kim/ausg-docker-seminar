@@ -412,11 +412,11 @@ node{
 
 ## 12. [AWS ECS](https://aws.amazon.com/ko/ecs/)
 
-**AWS ECS**  
-> AWS에서 제공하는 서비스로서 도커를 쉽게 관리 및 서비스 할 수 있도록 도커의 상태, 도커 컨테이너 등을 AWS Web Interface와 CLI를 이용해 관리 할 수 있습니다.**  
+**ECS (Elastic Container Service)**  
+> AWS에서 제공하는 서비스로서 도커를 쉽게 관리 및 서비스 할 수 있도록 도커의 상태, 도커 컨테이너 등을 AWS Web Interface와 CLI를 이용해 관리 할 수 있습니다.
 > 또한 ECS를 사용하면 도커의 에러메세지, 오토스케일링 등 다양한 DevOps 환경을 구성 할 수 있습니다.
 
-**Cluster**  
+**Cluster**
 > 컨테이너 인스턴스들의 집합이며, 여러개의 EC2 Instance와 Docker Container로 구성 될 수 있습니다.
 
 **Task**
@@ -472,7 +472,7 @@ node{
 ![aws](./assets/images/aws_6.png)
 
 
-- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
+- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드 (스크린샷 올려야함)
 > ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
 > ECR은 ECS와 통합되어 Production Flow를 단순화 할 수 있습니다.
 
