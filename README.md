@@ -478,7 +478,7 @@ node{
 ![aws](./assets/images/aws_6.png)
 
 
-- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드 (스크린샷 올려야함)
+- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
 > ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
 > ECR은 ECS와 통합되어 Production Flow를 단순화 할 수 있습니다.
 
