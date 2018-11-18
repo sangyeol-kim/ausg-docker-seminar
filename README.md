@@ -32,14 +32,15 @@
 2. ubuntu Shell에서 hello, world 출력하기
 
 
-    1. `$ docker run -it ubuntu:latest bash`
+    1. `$ docker run -it ubuntu:latest bash`  
         bash는 기본 커맨드이므로 생략 가능합니다.  
     2. `$ echo 'hello, world'`  
     이전의 `hello world`는 호스트 환경에서 실행한 ubuntu 명령어 였지만  
     지금은 직접 ubuntu shell로 들어와 `hello world`를 출력했습니다.
     3. `$ ls`  
-    ubuntu 컨테이너 이기 때문에 맥이나 윈도우가 아닌 ubuntu 파일 시스템을 확인할 수 있습니다.  
-
+    ubuntu 컨테이너 이기 때문에 맥이나 윈도우가 아닌 ubuntu 파일 시스템을 확인할 수 있습니다.
+    4. `$ exit`  
+    ubuntu 컨테이너를 종료하고, 호스트 환경으로 돌아갑니다.
 ## 3. Docker에 대한 이해 
 
 
@@ -58,7 +59,7 @@
     >
     > Docker는 Linux Container 기술이기 때문에 MacOS 또는 Windows에서 사용 할 경우
     각각의 가상화 환경(xhyve / hyper-V)에서 돌아갑니다.  
-
+    > 그렇기 때문에 가상화 환경을 지원하지 않는 CPU로 작업한다면 제대로 동작하지 않습니다.
 
 3. 이미지
 
@@ -73,7 +74,7 @@
 1. 컨테이너 확인  
 `$ docker ps`
 ps 명령어를 통해 실행중인 컨테이너를 확인 할 수 있습니다.
-> **-a 옵션을 통해 정지된 컨테이너도 확인 가능**
+> **docker -a <container_id>를 통해 정지된 컨테이너도 확인이 가능합니다.**
 
 2. 컨테이너 정지  
 `$ docker stop <container_id>`
@@ -109,6 +110,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 1. ubuntu Container 실행  
 `$ docker run -it ubuntu:latest bash`
 > -it 옵션은 bash를 실행한 후 명령어를 입력 할 수 있게 해줍니다.
+> docker는 기본적으로 'root'권한으로 실행됩니다.
 
 2. Package Manager 업데이트  
 `$ apt-get update`
@@ -119,13 +121,18 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 `$ apt-get install npm`  
 > **기본 ubuntu 이미지로 실행한 컨테이너에 Node.js와 npm이 설치된 상태**
 
-4. Commit Command를 이용한 이미지 생성  
+4. 호스트 환경으로 돌아가기
+`$ exit`
+
+5. Commit Command를 이용한 이미지 생성  
 `docker commit <container_id> <image_name>:<tag>`
+> 종료된 컨테이너의 container_id는 'docker ps -a'를 통해 확인할 수 있습니다.
+> 'image_name'과 'tag'는 임의로 설정할 수 있습니다.
 
-5. 이미지 확인  
-`docekr images | grep <image_name>`
+6. 이미지 확인  
+`docker images | grep <image_name>`
 
-6. 생성한 이미지를 이용해 켄테이너 실행  
+7. 생성한 이미지를 이용해 컨테이너 실행  
 `docker run -it <image_name>:<tag> bash`
 
 
@@ -194,21 +201,21 @@ ex) ubuntu:16.04
 > 해당 실습은 Node.js 공식문서를 이용합니다.
 > https://nodejs.org/ko/docs/guides/nodejs-docker-webapp/
 
-**이제 본격적으로 Dockerfile을 이용해서 Custom Image를 만들어 보겠습니다.**
+**이제 본격적으로 Dockerfile을 이용해서 node-app이라는 이름을 가진 Custom Image를 만들어 보겠습니다.**
 
 1. https://github.com/sangyeol-kim/docker_node_test 에 접속해 해당 프로젝트를 clone 해옵니다.
 > 해당 프로젝트는 Node.js로 작성된 hello, world!를 출력하는 간단한 웹 애플리케이션입니다.
 
-2. 해당 폴더로 접근해 `$ docker build -t <dockerhub_id>/<image_name>:<tag> .` 을 입력합니다.
+2. 해당 폴더로 접근해 `$ docker build -t <dockerhub_id>/node-app:latest .` 을 입력합니다.
 > 다음 실습에서 해당 이미지를 DockerHub에 업로드 할 예정입니다.  
 > DockerHub에 이미지를 올리기 위해서는 이미지 이름을 <dockerhub_id>/<image_name>로 생성해야 합니다.
 
-3. `$ docker run -p 3000:3000 <-d> <image_name>:<tag>`
+3. `$ docker run -p 3000:3000 <-d> <dockerhub_id>/node-app:latest`
 > -d 옵션을 주면 백그라운드에서 컨테이너가 실행됩니다.  
 > -p 옵션을 통해 컨테이너 내부와 호스트의 포트를 연결합니다.
 
 4. `$ docker logs <container_id>` 를 통해 컨테이너가 정상적으로 실행됐는지 확인하고,
-직접 localhost:5555에 접속해 확인해봅니다.
+직접 localhost:3000에 접속해 확인해봅니다.
 > Hello, world!가 정상적으로 출력된다면 실습을 성공적으로 마치셨습니다 :)
 
 5. 컨테이너 내부에 접근하는 방법
@@ -221,14 +228,14 @@ ex) ubuntu:16.04
 `$ docker login`
 
 2. DockerHub에 방금 생성한 이미지를 Push 합니다.  
-`$ docker push <dockerhub_id>/<image_name>:<tag>`
+`$ docker push <dockerhub_id>/node-app:latest`
 
 3. [DockerHub](https://hub.docker.com/)로 이동합니다.  
 > 아래와 같이 Repository가 생성되었으면 성공입니다!  
 > DockerHub는 Repository를 별도로 생성하지 않더라도 이미지명에 따라 자동으로 생성합니다.  
 > 같은 이름의 이미지라면 tag에 따라서 버전별로 저장됩니다.  
 
-![jenkins](./assets/images/dockerhub.png)
+![dockerhub](./assets/images/dockerhub.png)
 
 
 ---
