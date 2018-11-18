@@ -441,23 +441,23 @@ node{
 
 ![aws](./assets/images/aws_0.png)
 
-2. #### 사용자 클릭 후 사용자 추가 선택
+2. #### 사용자 클릭 후 사용자 추가를 선택해주세요.
 
 ![aws](./assets/images/aws_1.png)
 ![aws](./assets/images/aws_2.png)
 
 
-3. #### 사용자 이름과 프로그래밍 방식 액세스 선택
+3. #### 사용자 이름과 프로그래밍 방식 액세스 입력해주세요.
 
 ![aws](./assets/images/aws_3.png)
 
 
-4. #### 기존 정책 직접 연결 선택 후 AdministratorAccess 선택
+4. #### 기존 정책 직접 연결 선택 후 AdministratorAccess 선택해주세요.
 
 ![aws](./assets/images/aws_4.png)
 
 
-5. #### 나머지 설정 생략 후 사용자 만들기
+5. #### 나머지 설정은 생략 후 사용자 만들기를 선택해주세요.
 
 ![aws](./assets/images/aws_5.png)
 
@@ -468,7 +468,7 @@ node{
 ![aws](./assets/images/aws_6.png)
 
 
-- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
+- ### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
 > ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
 > ECR은 ECS와 통합되어 Production Flow를 단순화 할 수 있습니다.
 
