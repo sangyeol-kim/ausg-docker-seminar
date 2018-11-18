@@ -503,11 +503,11 @@ node{
 
 1. #### 새 작업 정의를 생성을 선택해주세요.
 
-![aws](./assets/images/task0_.png)
+![aws](./assets/images/task_0.png)
 
 2. #### EC2를 선택해주세요.
 
-![aws](./assets/images/task1_.png)
+![aws](./assets/images/task_1.png)
 
 3. #### 작업 정의 이름을 입력해주세요.
 
@@ -520,6 +520,8 @@ node{
 5. #### 컨테이너를 아래와 같이 구성해주세요.
 > 컨테이너 이름은 Push한 애플리케이션명을 사용해주세요.
 > 이미지 URL은 레포지토리 URL을 입력해주시면 됩니다.
+> 메모리 제한에 하드 옵션을 사용하면 도커가 한계를 초과했을 때 켄테이너를 종료합니다.
+> 소프트 옵션을 사용하면 한계를 넘어도 컨테이너가 종료되지 않습니다.
 
 ![aws](./assets/images/task_4.png)
 
@@ -537,7 +539,7 @@ node{
 > 해당 실습에서는 EC2 Instance에 SSH를 포함하지 않습니다.
 
 ![aws](./assets/images/cluster_2.png)
-![aws](./assets/images/cluster_3.png)
+![aws](./assets/images/cluster_33.png)
 
 - #### 서비스 생성
 
@@ -566,8 +568,6 @@ node{
 ![aws](./assets/images/final_2.png)
 
 4. #### `Hello, world!`
-
-![aws](./assets/images/final_3.png)
 
 ---
 
