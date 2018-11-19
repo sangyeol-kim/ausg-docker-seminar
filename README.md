@@ -215,6 +215,7 @@ ex) ubuntu:16.04
 
 4. `$ docker logs <container_id>` 를 통해 컨테이너가 정상적으로 실행됐는지 확인하고,
 직접 localhost:3000에 접속해 확인해봅니다.
+> <container_id>는 `$ docker ps <-a>`로 확인 가능합니다.
 > Hello, world!가 정상적으로 출력된다면 실습을 성공적으로 마치셨습니다 :)
 
 5. 컨테이너 내부에 접근하는 방법
@@ -267,6 +268,9 @@ ex) ubuntu:16.04
 >
 > 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
 
+- #### 이미지 다운로드  
+`$ docker pull subicura/jenkins:2`
+
 **MacOS**
 ```
 docker run \
@@ -276,7 +280,7 @@ docker run \
   --name jenkins \
   -v $(데이터 저장될 디렉토리):/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
-  subicura/jenkins:02
+  subicura/jenkins:2
 ```
 
 **Windows**
@@ -287,7 +291,7 @@ docker run \
   -p 8080:8080 \
   --name jenkins \
   -v $(데이터 저장될 디렉토리):/var/jenkins_home \
-  subicura/jenkins:02
+  subicura/jenkins:2
 ```
 
 > $(디렉토리)에는 
@@ -557,7 +561,7 @@ node{
 
 1. #### 클러스터로 이동하여 생성한 클러스터를 선택합니다.
 
-![aws](./assets/images/final_0.png)
+![aws](./assets/images/final_00.png)
 
 2. #### EC2 인스턴스 - 컨테이너 인스턴스를 클릭합니다.
 
@@ -575,7 +579,7 @@ node{
 > 해당 실습에서는 과금 방지를 위해 지금까지 생성한 ECS를 삭제해보도록 하겠습니다.
 
 - #### 서비스 삭제
-> 클러스터를 삭제하기 전 먼저 클러스트 내의 Service를 삭제해야 합니다.
+> 클러스터를 삭제하기 전 먼저 클러스트 내의 서비스를 삭제해야 합니다.
 
 1. 생성한 작업 정의를 클릭합니다.
 
