@@ -124,15 +124,18 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 `$ exit`
 
 5. Commit Command를 이용한 이미지 생성  
-`docker commit <container_id> <image_name>:<tag>`
+`$ docker commit <container_id> <image_name>:<tag>`
 > 종료된 컨테이너의 container_id는 'docker ps -a'를 통해 확인할 수 있습니다.
 > 'image_name'과 'tag'는 임의로 설정할 수 있습니다.
 
 6. 이미지 확인  
-`docker images | grep <image_name>`
+`$ docker images | grep <image_name>`
 
 7. 생성한 이미지를 이용해 컨테이너 실행  
-`docker run -it <image_name>:<tag> bash`
+`$ docker run -it <image_name>:<tag> bash`
+
+8. 정상적으로 빌드 되었는지 확인
+`$ node -v` / `$ npm -v`
 
 
 ## 6. Dockerfile
@@ -271,6 +274,8 @@ ex) ubuntu:16.04
 - #### 이미지 다운로드  
 `$ docker pull subicura/jenkins:2`
 
+- #### 젠킨스 이미지 실행
+
 **MacOS**
 ```
 docker run \
@@ -278,7 +283,7 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v $(데이터 저장될 디렉토리):/var/jenkins_home \
+  -v $(데이터 저장될 디렉토리)/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   subicura/jenkins:2
 ```
@@ -290,7 +295,7 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v $(데이터 저장될 디렉토리):/var/jenkins_home \
+  -v $(데이터 저장될 디렉토리)/var/jenkins_home \
   subicura/jenkins:2
 ```
 
