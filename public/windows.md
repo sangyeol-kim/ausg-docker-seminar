@@ -13,7 +13,7 @@
 
 ![windows](/assets/images/win_0.png)
 
-## 2. Expose demon
+## 2. Expose daemon
 
 - 작업 표시줄의 Docker 아이콘을 우 클릭한 후 설정에 들어가서 이미지와 같이 설정해주세요.  
 > 출처: http://bitly.kr/xhwK
@@ -22,7 +22,7 @@
 
 ## 3. Shared Drive
 
-- 작업 표시줄의 Docker 아이콘을 우 클릭한 후 설정에 들어가서 이미지와 같이 파티션을 선택해주세요.
+- 작업 표시줄의 Docker 아이콘을 우 클릭한 후 설정에 들어가서 사용할 파티션을 선택해주세요.
 > 볼륨 마운트를 하기 위한 설정입니다.  
 > 출처: http://bitly.kr/SCos
 
