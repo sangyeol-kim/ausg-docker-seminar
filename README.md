@@ -11,9 +11,9 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 
 - [DockerHub](https://hub.docker.com/)에 자신만의 이미지 업로드  
 
-- [Jenkins](https://jenkins.io/)를 사용 CI 자동화  
+- [Jenkins](https://jenkins.io/)를 이용한 CI 자동화  
 
-- [AWS ECS](https://aws.amazon.com/ko/ecs/)와 [AWS ECR](https://aws.amazon.com/ko/ecr/) 서비스를 이용한 배포  
+- [AWS ECS](https://aws.amazon.com/ko/ecs/)와 [ECR](https://aws.amazon.com/ko/ecr/)을 이용한 배포  
 
 
 ## 사전 준비
@@ -27,9 +27,7 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 > [Docker for Windows 추가 설정](./public/windows.md)
 
 
-## 시작
-
-**순서대로 진행해주세요!**
+## 시작!
 
 1. [Docker](./1.Docker/README.md)
 
