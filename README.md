@@ -4,6 +4,7 @@
 
 
 - [AWS](https://aws.amazon.com) 및 [DockerHub](https://hub.docker.com/) 계정 그리고 호스트 환경에 맞는 Docker 설치가 필요합니다.
+
 - 자세한 내용은 http://meetu.ps/e/G2jdh/CRhtw/f 밋업 공지를 확인해주세요.
 
 - Docker for Windows 환경은 추가적인 설정이 필요합니다. 아래의 링크로 이동해주세요.
@@ -13,10 +14,13 @@
 ## 목표
 
 
-- [Docker](https://www.docker.com/)를 이용해 이미지를 생성하고 컨테이너 실행
-- [Dockerhub](https://hub.docker.com/)에 자신만의 이미지 업로드
-- [Jenkins](https://jenkins.io/)를 사용하여 CI 자동화
-- [AWS ECS](https://aws.amazon.com/ko/ecs/)와 [AWS ECR](https://aws.amazon.com/ko/ecr/) 서비스를 이용한 배포
+- [Docker](https://www.docker.com/)를 이용해 이미지를 생성하고 컨테이너 실행  
+
+- [Dockerhub](https://hub.docker.com/)에 자신만의 이미지 업로드  
+
+- [Jenkins](https://jenkins.io/)를 사용하여 CI 자동화  
+
+- [AWS ECS](https://aws.amazon.com/ko/ecs/)와 [AWS ECR](https://aws.amazon.com/ko/ecr/) 서비스를 이용한 배포  
 
 
 ## 시작
