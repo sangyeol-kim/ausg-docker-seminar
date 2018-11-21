@@ -233,11 +233,10 @@ ex) ubuntu:16.04
 > DockerHub는 Repository를 별도로 생성하지 않더라도 이미지명에 따라 자동으로 생성합니다.  
 > 같은 이름의 이미지라면 tag에 따라서 버전별로 저장됩니다.  
 
-![dockerhub](./images/dockerhub.png)
+![dockerhub](./images/dockerhub.png)  
 
 
-
-**[2. Jenkins](./2.Jenkins/README.md)로 넘어가주세요!**
+**[2. Jenkins](./2.Jenkins/README.md)로 이동해주세요!**
 
 
 ---
