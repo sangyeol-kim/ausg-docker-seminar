@@ -1,4 +1,4 @@
-## 10. [Jenkins](https://jenkins.io/)
+## 1. [Jenkins](https://jenkins.io/)
 
 **Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.**  
 >
@@ -20,7 +20,7 @@
 >
 > Test, Container Update 등 더 많은 자동화가 가능하지만 해당 실습에서는 위 세 가지 과정만 자동화합니다.
 
-## 11. Jenkins 실습
+## 2. Jenkins 실습
 > 해당 실습에서는 DockerHub 계정이 필요합니다.
 >
 > 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
@@ -208,6 +208,9 @@ node{
 
 > 지금까지 Jenkins를 통해 Github Repository로 부터 소스를 다운로드 받고 이미지를 배포하는 과정을 자동화 했습니다.  
 > 해당 실습은 latest 이미자만 배포하며, 추가 Stage 설정으로 tag 별 배포도 가능합니다.  
+
+
+이제 [3. AWS ECS](./3.AWS_ECS/README.md)로 넘어가주세요!
 
 
 ---

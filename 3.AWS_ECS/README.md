@@ -1,5 +1,5 @@
 
-## 12. [AWS ECS](https://aws.amazon.com/ko/ecs/)
+## 1. [AWS ECS](https://aws.amazon.com/ko/ecs/)
 
 **ECS (Elastic Container Service)**  
 > AWS에서 제공하는 서비스로서 도커를 쉽게 관리 및 서비스 할 수 있도록 도커의 상태, 도커 컨테이너 등을 AWS Web Interface와 CLI를 이용해 관리 할 수 있습니다.
@@ -15,7 +15,7 @@
 **Service**
 > Task 내용들의 집합으로 컨테이너에 대한 자세한 설정을 할 수 있습니다.
 
-## 13. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
+## 12. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
 > 해당 실습에서는 AWS 프리티어 계정과 AWS CLI가  필요합니다.
 
 - ### AWS CLI 설치하기
@@ -155,7 +155,7 @@
 
 ---
 
-## 13. [AWS ECS](https://aws.amazon.com/ko/ecs/) 삭제
+## 3. 과금 방지를 위한 [AWS ECS/ECR](https://aws.amazon.com/ko/ecs/) 삭제
 > 해당 실습에서는 과금 방지를 위해 지금까지 생성한 ECS를 삭제해보도록 하겠습니다.
 
 - ### 서비스 삭제
@@ -181,6 +181,9 @@
 1. #### ECR 레포지토리로 이동하여 생성한 레포지토리를 선택하고 삭제합니다.
 
 ![aws](./images/delete_3.png)
+
+
+고생하셨습니다!!
 
 ---
 
