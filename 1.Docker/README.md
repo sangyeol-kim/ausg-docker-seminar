@@ -236,7 +236,7 @@ ex) ubuntu:16.04
 ![dockerhub](./images/dockerhub.png)  
 
 
-**[2. Jenkins](./2.Jenkins/README.md)로 이동해주세요!**
+**[2. Jenkins](/2.Jenkins/README.md)로 이동해주세요!**
 
 
 ---

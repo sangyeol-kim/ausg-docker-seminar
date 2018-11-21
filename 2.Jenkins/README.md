@@ -210,7 +210,7 @@ node{
 > 해당 실습은 latest 이미자만 배포하며, 추가 Stage 설정으로 tag 별 배포도 가능합니다.  
 
 
-**[3. AWS ECS](./3.AWS_ECS/README.md)로 이동해주세요!**
+**[3. AWS ECS](/3.AWS_ECS/README.md)로 이동해주세요!**
 
 
 ---
