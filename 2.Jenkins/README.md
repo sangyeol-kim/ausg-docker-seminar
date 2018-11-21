@@ -7,17 +7,17 @@
 (Slack 알림 플러그인도 존재!)  
 
 **CI/CD** 란?  
-> CI(Continuous Integration) : 지속적 통합  
-> CD(Continuous Delivery) : 지속적 배포  
+CI(Continuous Integration) : 지속적 통합  
+CD(Continuous Delivery) : 지속적 배포  
 > 보통 CI는 테스트하고 빌드하는 과정, CD는 빌드 이후에 배포까지의 과정을 의미합니다. 
-> 
+
 **해당 실습에서는 Jenkins를 이용해 다음과 같은 과정을 자동화합니다.**  
->
-> 1. Pull (Github Repository)
-> 2. Build (Docker Image)
-> 3. Push (DockerHub)
-> 4. Deploy
->
+
+1. Pull (Github Repository)
+2. Build (Docker Image)
+3. Push (DockerHub)
+4. Deploy
+
 > Test, Container Update 등 더 많은 자동화가 가능하지만 해당 실습에서는 위 세 가지 과정만 자동화합니다.
 
 ## 2. Jenkins 실습
