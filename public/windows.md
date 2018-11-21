@@ -11,7 +11,7 @@
 해당 세미나에서는 Linux Container를 사용하기 때문에 아래의 설정을 따라주세요.
 > 출처: http://bitly.kr/1tDe
 
-![windows](./assets/images/win_0.png)
+![windows](/assets/images/win_0.png)
 
 ## 2. Expose docker 활성화
 
@@ -19,4 +19,4 @@
 > 볼륨 마운트를 하기 위한 설정입니다.
 > 출처: http://bitly.kr/SCos
 
-![windows](./assets/images/win_1.png)
+![windows](/assets/images/win_1.png)
