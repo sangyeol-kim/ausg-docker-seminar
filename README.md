@@ -7,7 +7,7 @@
 - 자세한 내용은 http://meetu.ps/e/G2jdh/CRhtw/f 밋업 공지를 확인해주세요.
 
 - Docker for Windows 환경은 추가적인 설정이 필요합니다. 아래의 링크로 이동해주세요.
-> [추가 설정](./public/windows.md)
+> [Docker for Windows 추가 설정](./public/windows.md)
 
 ## 1. [Docker](https://www.docker.com/)
 
