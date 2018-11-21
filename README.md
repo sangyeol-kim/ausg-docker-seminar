@@ -11,12 +11,13 @@
 > [Docker for Windows 추가 설정](./public/windows.md)
 
 
-## 목표
+## 세미나 목표
+> 해당 세미나에서는 도커를 처음 사용하는 분들을 대상으로 기획되었으며 세미나를 통해 아래의 실습을 하실 수 있습니다. 
 
 
 - [Docker](https://www.docker.com/)를 이용해 이미지를 생성하고 컨테이너 실행  
 
-- [Dockerhub](https://hub.docker.com/)에 자신만의 이미지 업로드  
+- [DockerHub](https://hub.docker.com/)에 자신만의 이미지 업로드  
 
 - [Jenkins](https://jenkins.io/)를 사용하여 CI 자동화  
 
