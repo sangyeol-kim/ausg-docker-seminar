@@ -1,7 +1,6 @@
 # Docker 입문자를 위한 세미나
 
-## Windows 환경 Docker 설정
-
+## Docker for Windows 추가 설정
 
 - 가상화를 지원하지 않는 CPU의 경우 도커를 사용 할 수 없습니다.  
 
