@@ -237,7 +237,7 @@ ex) ubuntu:16.04
 
 
 
-이제 [2. Jenkins](./2.Jenkins/README.md)로 넘어가주세요!
+**[2. Jenkins](./2.Jenkins/README.md)로 넘어가주세요!**
 
 
 ---
