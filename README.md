@@ -6,6 +6,9 @@
 - [AWS](https://aws.amazon.com) 및 [DockerHub](https://hub.docker.com/) 계정 그리고 호스트 환경에 맞는 Docker 설치가 필요합니다.
 - 자세한 내용은 http://meetu.ps/e/G2jdh/CRhtw/f 밋업 공지를 확인해주세요.
 
+- Docker for Windows 환경은 추가적인 설정이 필요합니다. 아래의 링크로 이동해주세요.
+> [추가 설정](./public/windows.md)
+
 ## 1. [Docker](https://www.docker.com/)
 
 > Docker는 리눅스 애플리케이션을 컨테이너로 묶어서 실행할 수 있는 오픈소스 컨테이너 프로젝트로써,  
@@ -444,11 +447,11 @@ node{
 ## 13. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
 > 해당 실습에서는 AWS 프리티어 계정과 AWS CLI가  필요합니다.
 
-- #### AWS CLI 설치하기
+- ### AWS CLI 설치하기
 > 각 환경에 맞게 설치를 진행해주세요  
 > https://docs.aws.amazon.com/ko_kr/cli/latest/userguide/installing.html
 
-- #### AWS CLI Profile 등록  
+- ### AWS CLI Profile 등록  
 `$ aws configure`  
 > AWS Access Key ID:  
 > AWS Secret Access Key:  
@@ -466,7 +469,7 @@ node{
 ![aws](./assets/images/aws_2.png)
 
 
-3. #### 사용자 이름과 프로그래밍 방식 액세스 입력해주세요.
+3. #### 사용자 이름과 프로그래밍 방식 액세스를 선택해주세요.
 
 ![aws](./assets/images/aws_3.png)
 
@@ -487,8 +490,8 @@ node{
 ![aws](./assets/images/aws_6.png)
 
 
-- #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
-> ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.
+- ### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
+> ECR은 이미지를 쉽게 저장, 관리 및 배포를 할 수 있는 Docker Container Registry 서비스입니다.  
 > ECR은 ECS와 통합되어 Production Flow를 단순화 할 수 있습니다.
 
 1. #### AWS 콘솔에서 컴퓨팅 - ECS로 이동합니다.
@@ -502,12 +505,13 @@ node{
 > 커맨드 입력 전 `$ docker login`을 입력해주세요.
 
 > Push 이후 no basic auth credentials가 반환 될 경우  
- `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URL>/<Image_name>||')`를 입력해주세요.
+ `eval $(aws ecr get-login --no-include-email | sed 's|http://<레포지토리_URI>/<Image_name>||')`를 입력해주세요.  
+
 ![aws](./assets/images/ecr_3.png)
 ![aws](./assets/images/ecr_1.png)
 ![aws](./assets/images/ecr_2.png)
 
-- #### 작업 정의(Task Definition) 생성
+- ### 작업 정의(Task Definition) 생성
 > Task function은 Docker CLI의 docker run 명령어와 같지만 여러 컨테이너에 작동합니다.
 
 1. #### 새 작업 정의를 생성을 선택해주세요.
@@ -534,9 +538,9 @@ node{
 
 ![aws](./assets/images/task_4.png)
 
-9. #### 컨테이너 추가 후 작업 정의를 생성합니다.
+6. #### 컨테이너 추가 후 작업 정의를 생성합니다.
 
-- #### 클러스트 생성
+- ### 클러스트 생성
 > 클러스트는 AWS 컨테이너가 실행되는 장소이며, EC2 Instance와 유사한 구성을 사용합니다.
 
 1. #### 클러스트 생성을 클릭하고, EC2 Linux + 네트워킹을 선택합니다.
@@ -550,7 +554,7 @@ node{
 ![aws](./assets/images/cluster_22.png)
 ![aws](./assets/images/cluster_33.png)
 
-- #### 서비스 생성
+- ### 서비스 생성
 
 1. #### 작업 정의로 이동하여 생성한 작업 정의 체크 후 드롭박스를 클릭하고 서비스 생성을 선택합니다.
 
@@ -562,13 +566,13 @@ node{
 
 ![aws](./assets/images/service_1.png)
 
-- #### 서비스 확인
+- ### 서비스 확인
 
 1. #### 클러스터로 이동하여 생성한 클러스터를 선택합니다.
 
 ![aws](./assets/images/final_00.png)
 
-2. #### EC2 인스턴스 - 컨테이너 인스턴스를 클릭합니다.
+2. #### ECS 인스턴스 - 컨테이너 인스턴스를 클릭합니다.
 
 ![aws](./assets/images/final_1.png)
 
@@ -583,30 +587,29 @@ node{
 ## 13. [AWS ECS](https://aws.amazon.com/ko/ecs/) 삭제
 > 해당 실습에서는 과금 방지를 위해 지금까지 생성한 ECS를 삭제해보도록 하겠습니다.
 
-- #### 서비스 삭제
+- ### 서비스 삭제
 > 클러스터를 삭제하기 전 먼저 클러스트 내의 서비스를 삭제해야 합니다.
 
-1. 생성한 작업 정의를 클릭합니다.
+1. #### 생성한 작업 정의를 클릭합니다.
 
 ![aws](./assets/images/delete_11.png)
 
-2. 생성한 작업 정의 이름을 선택하고 드롭박스를 클릭해 등록 취소를 클릭합니다.
+2. #### 생성한 작업 정의 이름을 선택하고 드롭박스를 클릭해 등록 취소를 클릭합니다.
 
 ![aws](./assets/images/delete_1.png)
 
-- #### 클러스트 삭제
+- ### 클러스트 삭제
 
-1. 생성한 클러스트로 이동하여 클러스트 삭제를 클릭합니다.
+1. #### 생성한 클러스트로 이동하여 클러스트 삭제를 클릭합니다.
 > 약 1~2분 정도의 시간이 소요됩니다.
 
 ![aws](./assets/images/delete_2.png)
 
-- #### ECR 레포지토리 삭제
+- ### ECR 레포지토리 삭제
 
-1. ECR 레포지토리로 이동하여 생성한 레포지토리를 선택하고 삭제합니다.
+1. #### ECR 레포지토리로 이동하여 생성한 레포지토리를 선택하고 삭제합니다.
 
 ![aws](./assets/images/delete_3.png)
 
-
-
+---
 
