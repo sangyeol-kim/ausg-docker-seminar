@@ -208,7 +208,7 @@ ex) ubuntu:16.04
 
 **이제 본격적으로 Dockerfile을 이용해서 node-app이라는 이름을 가진 Custom Image를 만들어 보겠습니다.**
 
-1. https://github.com/sangyeol-kim/docker_node_test 에 접속해 해당 프로젝트를 clone 해옵니다.
+1. https://github.com/sangyeol-kim/node-app 에 접속해 해당 프로젝트를 clone 해옵니다.
 > 해당 프로젝트는 Node.js로 작성된 hello, world!를 출력하는 간단한 웹 애플리케이션입니다.
 
 2. 해당 폴더로 접근해 `$ docker build -t <dockerhub_id>/node-app:latest .` 을 입력합니다.
@@ -347,7 +347,7 @@ docker run \
 - #### 옵션 중 **Do not allow concurrent builds와 GitHub project**를 선택하고 저장을 누릅니다.
 > Do not allow concurrent builds 옵션은 빌드가 진행중인 상태에서는 다음 빌드를 진행하지 않습니다.  
 > Github project는 Github 주소 등록을 위해 선택합니다.  
-> Github 주소: https://github.com/sangyeol-kim/docker_node_test
+> Github 주소: https://github.com/sangyeol-kim/node-app
 
 ![jenkins](./assets/images/jenkins_8.png)
 
@@ -383,7 +383,7 @@ docker run \
 node{
     withCredentials([usernamePassword(credentialsId: 'Credential_ID', usernameVariable: 'DOCKER_HUB_ID', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
         stage('Pull') {
-            git 'https://github.com/sangyeol-kim/docker_node_test'
+            git 'https://github.com/sangyeol-kim/node-app'
         }
         stage('Build') {
             sh(script: 'docker build --force-rm=true -t ${DOCKER_HUB_ID}/node-jenkins:latest .')
