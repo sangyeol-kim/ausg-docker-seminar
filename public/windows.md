@@ -11,14 +11,14 @@
 해당 세미나에서는 Linux Container를 사용하기 때문에 아래의 설정을 따라주세요.  
 > 출처: http://bitly.kr/1tDe
 
-![windows](/assets/images/win_0.png)
+![windows](./images/win_0.png){: width="100%" height="50%"}
 
 ## 2. Expose daemon
 
 - 작업 표시줄의 Docker 아이콘을 우 클릭한 후 설정에 들어가서 이미지와 같이 설정해주세요.  
 > 출처: http://bitly.kr/xhwK
 
-![windows](/assets/images/win_2.png)
+![windows](./images/win_2.png)
 
 ## 3. Shared Drive
 
@@ -26,4 +26,4 @@
 > 볼륨 마운트를 하기 위한 설정입니다.  
 > 출처: http://bitly.kr/SCos
 
-![windows](/assets/images/win_1.png)
+![windows](./images/win_1.png)
