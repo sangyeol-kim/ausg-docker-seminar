@@ -195,9 +195,12 @@ ex) ubuntu:16.04
 **`$ apt-get install nodejs` 와 같이 중간에 응답해야 하는 부분이 있다면 꼭 -y 옵션을 추가해야 합니다.**
 
 4. WORKDIR
-> WORKDIR은 작업 디렉토리를 변경하는 명령어입니다.
+> WORKDIR 명령어는 작업 디렉토리를 변경하는 명령어입니다.
 
-5. CMD
+5. EXPOSE
+> EXPOSE 명령어는 컨테이너로 실행할 때 노출시킬 포트를 지정하는 명령어입니다.
+
+6. CMD
 > CMD 명령어는 도커를 실행했을 때 기본적으로 실행될 명령어를 지정합니다.
 > 예를 들어 이전에 실행했던 `$docker run -it ubuntu:latest bash` 에서 bash는 기본 명령어로 지정되어 있기 때문에 생략해도 실행이 됩니다.
 
@@ -286,7 +289,7 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v $(데이터 저장될 디렉토리)/var/jenkins_home \
+  -v /Users/<USER_NAME>/jenkins_home:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   subicura/jenkins:2
 ```
@@ -298,13 +301,10 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v $(데이터 저장될 디렉토리)/var/jenkins_home \
+  -v //c/jenkins:/var/jenkins_home \
   subicura/jenkins:2
 ```
 
-> $(디렉토리)에는 
-**MacOS: /Users/$(User_name)/Download/jenkins**
-**Windows: //c/jenkins 와 같이 입력해주세요.**  
 
 > Jenkins Official Image(jenkins:lts)는 Docker 및 Docker-Compose가 설치되어 있지 않기 때문에  
 별도의 이미지(subicura/jenkins:02)를 사용합니다.  
@@ -374,11 +374,13 @@ docker run \
 
 ![jenkins](./assets/images/set.png)
 
-- #### 그리고 아래에 Pipeline Script에 다음 코드를 입력하고 저장을 누릅니다.
+- #### 그리고 아래에 Pipeline Script에 호스트 환경에 맞는 코드를 입력하고 저장을 누릅니다.
 
 ![jenkins](./assets/images/pipeline.png)
 
 > **Credential_ID 에는 아까 생성한 Credential ID를 적어주세요!**
+
+**MacOS**
 ```
 node{
     withCredentials([usernamePassword(credentialsId: 'Credential_ID', usernameVariable: 'DOCKER_HUB_ID', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
@@ -406,6 +408,41 @@ node{
         }
     }
 }
+```
+
+**Windows**
+> 윈도우에서 젠킨스가 호스트의 도커와 통신을 하기 위해서는 withEnv로 Stage를 감싸줘야 합니다.
+
+```
+node{
+    withEnv(['DOCKER_HOST=tcp://docker.for.win.localhost:2375']) { 
+        withCredentials([usernamePassword(credentialsId: 'Credential_ID', usernameVariable: 'DOCKER_HUB_ID', passwordVariable: 'DOCKER_HUB_PASSWORD')]) {
+            stage('Pull') {
+                git 'https://github.com/sangyeol-kim/node-app'
+            }
+            stage('Build') {
+                sh(script: 'docker build --force-rm=true -t ${DOCKER_HUB_ID}/node-jenkins:latest .')
+                // 빌드가 실패한 경우에는 컨테이너 제거
+            }
+            stage('Push') {
+                sh(script: 'docker login -u ${DOCKER_HUB_ID} -p ${DOCKER_HUB_PASSWORD}')
+                sh(script: 'docker push ${DOCKER_HUB_ID}/node-jenkins:latest')
+            }
+            stage('Deploy') {
+                try {
+                    stage ('Wait') {
+                        sh(script: 'docker stop node-jenkins') 
+                        sh(script: 'docker rm node-jenkins')
+                    }
+                } catch (err) {
+                    echo 'node-jenkins container not exists'
+                }
+                sh(script: 'docker run -d -p 3000:3000 --name=node-jenkins ${DOCKER_HUB_ID}/node-jenkins:latest')
+            }
+        }
+    }
+}
+
 ```
 
 - #### Jenkins 프로젝트로 돌아와서 Build Now를 클릭합니다.
