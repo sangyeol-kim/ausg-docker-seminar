@@ -33,4 +33,4 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 
 2. [Jenkins](./2.Jenkins/README.md)
 
-3. [AWS ECs/ECR](./3.AWS_ECS/README.md)
+3. [AWS ECS/ECR](./3.AWS_ECS/README.md)
