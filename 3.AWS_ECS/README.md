@@ -44,7 +44,7 @@
 ![aws](./images/iam_2.png)
 
 
-4. 기존 정책 직접 연결 선택 후 AmazonECS_FullAccess과 AmazonEC2ContainerRegistryFullAccess를 선택해주세요.
+4. 기존 정책 직접 연결 선택 후 AmazonECS_FullAccess와 AmazonEC2ContainerRegistryFullAccess를 선택해주세요.
 
 ![aws](./images/iam_3.png)
 
