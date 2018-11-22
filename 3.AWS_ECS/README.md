@@ -32,33 +32,31 @@
 **AWS Credential이 없는 경우**
 1. AWS 콘솔 로그인 후 보안, 자격 증명 및 규정 준수 - IAM으로 이동합니다.
 
-![aws](./images/aws_0.png)
+![aws](./images/iam_0.png)
 
 2. 사용자 클릭 후 사용자 추가를 선택해주세요.
 
-![aws](./images/aws_1.png)
-![aws](./images/aws_2.png)
+![aws](./images/iam_1.png)
 
 
 3. 사용자 이름과 프로그래밍 방식 액세스를 선택해주세요.
 
-![aws](./images/aws_3.png)
+![aws](./images/iam_2.png)
 
 
-4. 기존 정책 직접 연결 선택 후 AdministratorAccess 선택해주세요.
+4. 기존 정책 직접 연결 선택 후 AmazonECS_FullAccess과 AmazonEC2ContainerRegistryFullAccess를 선택해주세요.
 
-![aws](./images/aws_4.png)
-
-
-5. 나머지 설정은 생략 후 사용자 만들기를 선택해주세요.
-
-![aws](./images/aws_5.png)
+![aws](./images/iam_3.png)
 
 
-6. 액세스 키 ID와 비밀 액세스 키 확인
+5. 태그 설정은 생략 후 사용자 만들기를 선택해주세요.
+
+![aws](./images/iam_4.png)
+
+
+6. 액세스 키 ID와 비밀 액세스 키 확인를 확인해주세요.
 > 비밀 액세스 키는 꼭 기억해주세요
 
-![aws](./images/aws_6.png)
 
 
 - #### [ECR](https://aws.amazon.com/ko/ecr/)에 이미지 업로드
