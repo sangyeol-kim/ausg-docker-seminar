@@ -15,7 +15,7 @@
 **Service**
 > Task 내용들의 집합으로 컨테이너에 대한 자세한 설정을 할 수 있습니다.
 
-## 12. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
+## 2. [AWS ECS](https://aws.amazon.com/ko/ecs/) 실습
 > 해당 실습에서는 AWS 프리티어 계정과 AWS CLI가  필요합니다.
 
 - #### AWS CLI 설치하기
