@@ -137,7 +137,7 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 > DSL이란 특정 도메인(여기선 Docker)에 특성화 된 Little Language  
 > ex) Markdown Language
 
-> Dockerfile을 통해 이전에 생성한 이미지를 똑같이 만들어보겠습니다.
+Dockerfile을 통해 이전에 생성한 이미지를 똑같이 만들어보겠습니다.
 
 1. Dockerfile 생성
 
