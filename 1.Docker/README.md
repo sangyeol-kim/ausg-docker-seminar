@@ -142,7 +142,7 @@ Dockerfile을 통해 이전에 생성한 이미지를 똑같이 만들어보겠�
 1. Dockerfile 생성
 
 
-`$ touch Dockerfile`
+    `$ touch Dockerfile`
 
 2. Dockerfile 작성
 > 에디터 또는 vim 등을 이용하여 생성한 Dockerfile에 아래 코드를 작성해주세요.
