@@ -1,12 +1,8 @@
-<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.jpg?raw=true">
-<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
-
 # AUSG의 초보자를 위한 AWS 뿌시기 - Docker편
 
 Docker 입문자를 위한 세미나에 오신 것을 환영합니다.  
 
 해당 세미나는 도커를 처음 이용해보는 분들을 대상으로 기획되었습니다.  
-
 
 ## 사전 준비
 
@@ -37,3 +33,8 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 2. [Jenkins](./2.Jenkins/README.md)
 
 3. [AWS ECS/ECR](./3.AWS_ECS/README.md)
+
+<p align="center">
+<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.jpg?raw=true">
+<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
+</p>
