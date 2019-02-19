@@ -1,6 +1,6 @@
 <p align="center">
-<img width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.jpg?raw=true">
-<img width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
+<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.jpg?raw=true">
+<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
 </p>
 
 # AUSG의 초보자를 위한 AWS 뿌시기 - Docker편
