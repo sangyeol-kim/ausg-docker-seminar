@@ -34,9 +34,9 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 
 3. [AWS ECS/ECR](./3.AWS_ECS/README.md)
 
-<br><br><br>
+<br>
 
 <p align="center">
-<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.jpg?raw=true">
-<img height= "400" width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
+<img height= "500" width="500" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.jpg?raw=true">
+<img height= "500" width="500" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
 </p>
