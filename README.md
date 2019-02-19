@@ -1,3 +1,8 @@
+<p align="center">
+<img width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_2.JPG?raw=true">
+<img width="400" src="https://github.com/sangyeol-kim/ausg-docker-seminar/blob/master/assets/images/hands_on_1.JPG?raw=true">
+</p>
+
 # AUSG의 초보자를 위한 AWS 뿌시기 - Docker편
 
 Docker 입문자를 위한 세미나에 오신 것을 환영합니다.  
