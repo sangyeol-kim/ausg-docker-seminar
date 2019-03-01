@@ -37,7 +37,7 @@ docker run \
   --rm \
   -p 8080:8080 \
   --name jenkins \
-  -v /Users/${USER_NAME}/jenkins_home:/var/jenkins_home \
+  -v /Users/<USER_NAME>/jenkins_home:/var/jenkins_home \
   -v /var/run/docker.sock:/var/run/docker.sock \
   subicura/jenkins:2
 ```
