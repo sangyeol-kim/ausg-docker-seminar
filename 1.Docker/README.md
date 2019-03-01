@@ -14,7 +14,7 @@
 1. hello, world 출력하기
 
 
-    `$ docker run -it ubuntu:latest echo 'hello, world!'`
+    `$ docker run ubuntu:latest echo 'hello, world!'`
 
 
     해당 명령어를 실행하면 호스트 환경이 아닌 ubuntu 환경의 컨테이너에서 `hello, world`가 출력됩니다.  
