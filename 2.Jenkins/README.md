@@ -3,7 +3,7 @@
 **Jenkins란 이미지를 자동으로 빌드하고 배포해주는 CI 툴입니다.**  
 >
 > TravisCI, CircleCI 등 여러 CI툴이 존재하지만 해당 실습에서는 대중적으로 많이 선택받고 있는 Jenkins를 사용합니다.  
-> Jenkins는 Master/Agent로 구성되어 있으며, 굉장히 많은 플러그인을 제공합니다.
+> Jenkins는 특히 굉장히 많은 플러그인을 제공합니다.
 (Slack 알림 플러그인도 존재!)  
 
 **CI/CD** 란?  
