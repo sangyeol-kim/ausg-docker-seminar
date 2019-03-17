@@ -25,10 +25,10 @@ CD(Continuous Delivery) : 지속적 배포
 >
 > 지금까지 컨테이너를 실행하고 이미지를 만들었던 과정을 Jenkins를 통해 자동화 해보겠습니다.
 
-- #### 이미지 다운로드  
+#### 이미지 다운로드  
 `$ docker pull subicura/jenkins:2`
 
-- #### 젠킨스 이미지 실행
+#### 젠킨스 이미지 실행
 
 **MacOS**
 ```
