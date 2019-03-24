@@ -94,9 +94,9 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 ## 5. 이미지 생성
 
 
-> 지금까지 사용해 본 이미지는 DockerHub에 올라와 있는 이미지 입니다.  
->
-> 지금 실습부터는 직접 이미지를 만들어 보겠습니다.  (우분투 기본 이미지에 Node.js와 npm 설치)
+지금까지 사용해 본 이미지는 DockerHub에 올라와 있는 이미지 입니다.  
+
+지금 실습부터는 직접 이미지를 만들어 보겠습니다.  (우분투 기본 이미지에 Node.js와 npm 설치)
 
 1. ubuntu Container 실행  
 `$ docker run -it ubuntu:latest bash`
@@ -133,9 +133,9 @@ logs 명령어를 통해 컨테이너의 동작 상태를 확인할 수 있습�
 ## 6. Dockerfile
 
 
-> Dockerfile이란 이미지 생성 과정을 기술한 일종의 Docker 전용 DSL(Domain Specific Language)  
-> DSL이란 특정 도메인(여기선 Docker)에 특성화 된 Little Language  
-> ex) Markdown Language
+Dockerfile이란 이미지 생성 과정을 기술한 일종의 Docker 전용 DSL(Domain Specific Language)  
+DSL이란 특정 도메인(여기선 Docker)에 특성화 된 Little Language  
+ex) Markdown Language
 
 Dockerfile을 통해 이전에 생성한 이미지를 똑같이 만들어보겠습니다.
 
@@ -165,9 +165,9 @@ Dockerfile을 통해 이전에 생성한 이미지를 똑같이 만들어보겠�
 
 
 ## 7. Dockerfile 추가 명령어
-> 지금까지 작성한 Dockerfile은 FROM과 RUN 명령어로만 구성되어 있습니다.
->
-> 추가적으로 중요한 명령어 몇 가지를 알아보겠습니다.
+지금까지 작성한 Dockerfile은 FROM과 RUN 명령어로만 구성되어 있습니다.
+
+추가적으로 중요한 명령어 몇 가지를 알아보겠습니다.
 
 1. FROM
 > FROM 명령어는 `FROM <image_name>:<tag>` 형식으로 지정할 수 있습니다.  
