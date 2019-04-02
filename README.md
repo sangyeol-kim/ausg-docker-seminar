@@ -23,7 +23,7 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 
 - [Jenkins](https://jenkins.io/)를 이용한 CI 자동화  
 
-- [AWS ECS](https://aws.amazon.com/ko/ecs/)와 [ECR](https://aws.amazon.com/ko/ecr/)을 이용한 배포  
+- [AWS ECS](https://aws.amazon.com/ko/ecs/)를 이용한 컨테이너 오케스트레이션
 
 
 ## 시작!
