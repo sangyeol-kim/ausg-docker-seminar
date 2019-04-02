@@ -21,7 +21,7 @@ Docker 입문자를 위한 세미나에 오신 것을 환영합니다.
 
 - [DockerHub](https://hub.docker.com/)에 자신만의 이미지 업로드  
 
-- [Jenkins](https://jenkins.io/)를 이용한 CI 자동화  
+- [Jenkins](https://jenkins.io/)를 이용한 CI/CD 자동화  
 
 - [AWS ECS](https://aws.amazon.com/ko/ecs/)를 이용한 컨테이너 오케스트레이션
 
