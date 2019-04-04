@@ -1,10 +1,13 @@
 # Docker 입문자를 위한 세미나
 
+## 안내 사항
+- 가상화를 지원하지 않는 CPU의 경우 도커를 사용 할 수 없습니다.
+
+- Windows10 Edu 이하 버전을 사용하는 경우 Docker for Windows를 사용할 수 없습니다. Docker Toolbox를 설치해주세요.
+
 ## Docker for Windows 추가 설정
 
-- 가상화를 지원하지 않는 CPU의 경우 도커를 사용 할 수 없습니다.  
-
-## 1. Linux Container
+1. Linux Container
 
 - 작업 표시줄의 Docker 아이콘을 우 클릭한 후 다음과 같이 Linux Container로 변경해주세요.
 > Windows 환경에서는 Windows Container와 Linux Container를 지원합니다.  
@@ -13,14 +16,14 @@
 
 ![windows](./images/win_0.png){: width="100%" height="50%"}
 
-## 2. Expose daemon
+2. Expose daemon
 
 - 작업 표시줄의 Docker 아이콘을 우 클릭한 후 설정에 들어가서 이미지와 같이 설정해주세요.  
 > 출처: http://bitly.kr/xhwK
 
 ![windows](./images/win_2.png)
 
-## 3. Shared Drive
+3. Shared Drive
 
 - 작업 표시줄의 Docker 아이콘을 우 클릭한 후 설정에 들어가서 사용할 파티션을 선택해주세요.
 > 볼륨 마운트를 하기 위한 설정입니다.  
